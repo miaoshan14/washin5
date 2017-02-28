@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227152755) do
+ActiveRecord::Schema.define(version: 20170228111328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "financings", force: :cascade do |t|
+    t.float    "amount"
+    t.integer  "project_id"
+    t.integer  "partner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["partner_id"], name: "index_financings_on_partner_id", using: :btree
+    t.index ["project_id"], name: "index_financings_on_project_id", using: :btree
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.string   "participation_picture"
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["project_id"], name: "index_participations_on_project_id", using: :btree
+    t.index ["user_id"], name: "index_participations_on_user_id", using: :btree
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string   "name"
+    t.string   "logo"
+    t.string   "description"
+    t.string   "website"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "location"
+    t.integer  "pictures_goal"
+    t.string   "project_picture"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +71,8 @@ ActiveRecord::Schema.define(version: 20170227152755) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "financings", "partners"
+  add_foreign_key "financings", "projects"
+  add_foreign_key "participations", "projects"
+  add_foreign_key "participations", "users"
 end
