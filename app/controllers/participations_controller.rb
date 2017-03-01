@@ -1,13 +1,6 @@
 class ParticipationsController < ApplicationController
-  before_action :set_participation, only: [:show, :edit, :update, :destroy]
+  before_action :set_participation, only: [:edit, :update, :destroy]
 
-  def index
-    if !params[:q].blank?
-      @participations = participation.where("lower(name) like ?", "%#{params[:q].downcase}%" )
-    else
-      @participations = participation.all
-    end
-  end
 
 
   def new
@@ -15,8 +8,9 @@ class ParticipationsController < ApplicationController
   end
 
   def create
+    @project = Project.find(params[:project_id])
     @participation = participation.new(participation_params)
-    @participation.artist = current_user.artist
+    @participation.project = @project
     respond_to do |format|
       if @participation.save
         format.html { redirect_to @participation, notice: 'Participation enregistrée' }

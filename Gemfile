@@ -10,6 +10,7 @@ end
 
 
 gem 'cloudinary', '1.1.7'
+gem 'figaro'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem "bootstrap-sass"
