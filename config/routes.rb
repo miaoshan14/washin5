@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :projects, only: [:index, :show, :edit, :destroy, :new] do
-    resources :participations, only: :create
+    resources :participations, only: [:create, :new]
   end
 
   devise_for :users
