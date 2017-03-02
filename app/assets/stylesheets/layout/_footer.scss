@@ -1,1 +1,63 @@
 // Your footer style
+footer {
+ width: 100%;
+ text-align: center;
+ color: #175071;
+ position: fixed;
+ bottom: 0;
+ //position: relative;
+  ul {
+    list-style-type: none;
+  }
+}
+
+.footer
+{
+  background-color: #175071;
+}
+.img-part {
+  img {
+    max-width: 200px;
+    max-height: 100px;
+    margin: 0px 10px 0px 10px;
+  }
+}
+
+  .img-list {
+    li {
+      display: inline-block;
+    }
+  }
+  .container {
+  div{
+
+    padding: 7px;
+
+
+
+    li{
+     text-align: left;
+     padding: 5px;
+     color: #F1F1F1;
+      }
+    }
+  }
+// footer ul{
+//   color: #175071;
+// }
+
+// .img-part li{
+//   list-style: none;
+//   height: 50px;
+//   display: ;
+// }
+
+// .img-part img{
+//   height: 70px;
+//   margin: 10px 50px 50px 50px;
+// }
+// .mentions-footer{
+//   background-color: #175071;
+//   margin: 70px;
+//   text-align: left;
+// }
