@@ -7,7 +7,7 @@ class ParticipationsController < ApplicationController
 
   def create
     @project = Project.find(params[:project_id])
-    @participation = participation.new(participation_params)
+    @participation = Participation.new(participation_params)
     @participation.project = @project
     respond_to do |format|
       if @participation.save

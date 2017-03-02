@@ -1,6 +1,14 @@
 <h1>new</h1>
 
-<% @participation.participation_pictures.each do |participation_picture| %>
-  <%= cl_image_tag participation_picture.path, width: 300, height: 200, crop: :fill %>
+<%= simple_form_for (@participation) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :participation_pictures, as: :attachinary %>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
 <% end %>
-<%= render 'form', participation_pictures: @participation %>
+
+
+<% @participation.participation_pictures.each do |participation_picture| %>
+    <%= cl_image_tag(participation_picture.path, { size: '125x125', crop: :fit }) %>
+<% end %>
