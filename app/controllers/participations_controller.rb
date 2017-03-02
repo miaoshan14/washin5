@@ -1,6 +1,5 @@
 class ParticipationsController < ApplicationController
   before_action :set_participation, only: [:edit, :update, :destroy]
-  before_action :login
 
   def new
     @participation = Participation.new
@@ -49,7 +48,7 @@ class ParticipationsController < ApplicationController
     end
 
     def participation_params
-      params.require(:participation).permit(:participation_picture)
+      params.require(:participation).permit(participation_pictures: [])
     end
 
     # def login
