@@ -18,3 +18,5 @@
 
 # Ignore application configuration
 /config/application.yml
+Supprimerait .idea/modules.xml
+Supprimerait .idea/washin5.iml
