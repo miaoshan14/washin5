@@ -2,7 +2,9 @@
 footer {
  text-align: center;
  color: #175071;
- bottom: 0px;
+ display : table-row;
+ height: 100px;
+ /* à titre d'exemple */
  //position: relative;
 
   ul {
@@ -24,15 +26,16 @@ footer {
     }
   }
   .container {
-    max-height: 80px;
   div{
     background-color: #175071;
     border-radius: 30px;
-
     bottom: 0px;
+    padding: 7px;
+
 
     li{
      text-align: left;
+     padding: 5px;
      color: #F1F1F1;
       }
     }
