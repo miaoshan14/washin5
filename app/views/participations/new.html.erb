@@ -1,7 +1,6 @@
 <h1>new</h1>
 
-  <%= render 'form', participation: @participation %>
-
-   <% @participation.participation_pictures.each do |participation_picture| %>
-      <%= cl_image_tag participation_picture.path, width: 300, height: 200, crop: :fill %>
-  <% end %>
+<% @participation.participation_pictures.each do |participation_picture| %>
+  <%= cl_image_tag participation_picture.path, width: 300, height: 200, crop: :fill %>
+<% end %>
+<%= render 'form', participation_pictures: @participation %>
