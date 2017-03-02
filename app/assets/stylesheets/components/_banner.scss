@@ -1,0 +1,52 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 300px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(125,185,232,0) 100%), url("Girls-WI5.jpg");
+  position: relative;
+  background-position: center center;
+}
+.banner h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.share-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.share-link {
+  flex: 0 0 24%;
+  color: #7797AB;
+  font-size: 18px;
+  padding: 0px 10px;
+  text-align: center;
+  border-radius: 5px;
+  border-color: rgba(255, 255, 255, 1);
+  background: rgba(255,255,255,0.20);
+  cursor: pointer;
+  margin: 6px;
+  &:hover {
+    background: transparent;
+  }
+}
+// .bg-instagram {
+//   background: #aeaeae;
+// }
+// .bg-twitter {
+//   background: #00a3e1;
+// }
+// .bg-facebook {
+//   background: #3b5998;
+// }
