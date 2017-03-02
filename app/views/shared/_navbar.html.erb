@@ -44,6 +44,7 @@
       </div>
 
     <% else %>
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
             <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -53,7 +54,7 @@
           </li>
           <!-- Login text link -->
           <li>
-            <%= link_to t(".sign_in", default: "S'inscrire"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            <%= link_to t(".sign_in", default: "S'inscrire"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
             <% end %>
           </li>
         </div>
