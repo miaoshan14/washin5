@@ -1,17 +1,20 @@
 // Your footer style
 footer {
+ width: 100%;
  text-align: center;
  color: #175071;
- display : table-row;
- height: 100px;
- /* à titre d'exemple */
+ position: fixed;
+ bottom: 0;
  //position: relative;
-
   ul {
     list-style-type: none;
   }
 }
 
+.footer
+{
+  background-color: #175071;
+}
 .img-part {
   img {
     max-width: 200px;
@@ -27,10 +30,9 @@ footer {
   }
   .container {
   div{
-    background-color: #175071;
-    border-radius: 30px;
-    bottom: 0px;
+
     padding: 7px;
+
 
 
     li{
