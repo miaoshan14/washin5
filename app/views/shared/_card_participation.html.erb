@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <% @participations.each do |participation| %>
+      <div class="col-xs-6 col-md-3 ">
+        <div class="participation-card">
+          <div class="footer-picture">
+            <% if participation.picture_participation? %>
+              <%= link_to participation_path(participation) do %>
+                <%= cl_image_tag participation.participation_picture.path, width: 300, height: 300, crop: :fill %>
+                <% end %>
+            <% end %>
+             <% if current_user == participation.user_id %>
+            <%= link_to(raw("<i class='fa fa-pencil-square-o' aria-hidden='true'></i>"), edit_participation_path(participation)) %>
+
+            <%= link_to(raw("<i class='fa fa-trash-o' aria-hidden='true'></i>"), participation, method: :delete, data: { confirm: 'Vous êtes sûr ?' }) %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
