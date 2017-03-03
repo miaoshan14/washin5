@@ -1,38 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <p>
+        <strong>Name:</strong>
+        <%= @project.name %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @project.description %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+      <p>
+        <strong>Location:</strong>
+        <%= @project.location %>
+      </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @project.location %>
-</p>
+      <p>
+        <strong>Pictures goal:</strong>
+        <%= @project.pictures_goal %>
+      </p>
 
-<p>
-  <strong>Pictures goal:</strong>
-  <%= @project.pictures_goal %>
-</p>
-
-<p>
-  <strong>Project picture:</strong>
-  <%= @project.project_picture %>
-</p>
-
-
-
-<div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
-  <%= link_to 'participer', new_project_participation_path(@project) %>
+      <p>
+        <strong>Project picture:</strong>
+        <%= @project.project_picture %>
+      </p>
+      <p id="notice"><%= notice %></p>
+      <br>
+      <%= link_to 'participer', new_project_participation_path(@project), class: "btn-lg btn-danger" %>
+    </div>
+    <div class="col-md-5">
+      <h3>12 Washers ont deja participe </h3>
+      <tr class="picture_project">
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=1066" alt="image galerie"></td>
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=1014" alt="image galerie"></td>
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=1012" alt="image galerie"></td>
+        </tr>
+          <tr class="picture_project">
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=996" alt="image galerie"></td>
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=977" alt="image galerie"></td>
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=970" alt="image galerie"></td>
+        </tr>
+          <tr class="picture_project">
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=944" alt="image galerie"></td>
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=933" alt="image galerie"></td>
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=914" alt="image galerie"></td>
+      </tr>
+          <tr class="picture_project">
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=912" alt="image galerie"></td>
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=896" alt="image galerie"></td>
+        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=890" alt="image galerie"></td>
+      </tr>
+    </div>
+  </div>
 </div>
 
-
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
