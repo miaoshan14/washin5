@@ -1,4 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(125,185,232,0) 100%), url(<%= image_path 'boys_WI5.jpg' %>);">
+    <div class="container">
+
+
+      <div class="banner-content">
     <div class="share-links">
       <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank" class="share-link bg-facebook">
         <i class="fa fa-facebook"></i>
@@ -10,21 +14,21 @@
         <i class="fa fa-instagram"></i>
       </a>
     </div>
-  <div class="banner-content">
-  <h3> Vous avez déjà économisé <%= @liters_count %> L d'eau</h3>
-    <div class="container">
+
+      <div class="banner-bubble">
+        <h3> Vous avez déjà économisé <div class="banner-bubble_counter"><%= @liters_count %></div> L d'eau</h3>
+      </div>
+
       <div class="row">
         <div class="col-sm-4 left">
           <%= @projects_done_count %> projets réalisés
         </div>
-        <div class="col-sm-4 center">
-          <%= @projects_impact_sum %>  bénéficiaires
-        </div>
         <div class="col-sm-4 right">
-             <%= @users_count %> washeurs
+          <%= @projects_impact_sum %>  bénéficiaires
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -35,17 +39,21 @@
 
 
 <div class="container">
-  <h1> Envoyez vos selfies pour une bonne cause !</h1>
+  <h1 class= "text-center catch-phrase" > Envoyez vos selfies pour une bonne cause !</h1>
   <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quo dignissimos eos ducimus, nostrum quam aut praesentium a explicabo numquam distinctio vero iusto quod eaque voluptatibus fugit excepturi, quae beatae!</p>
   <p>Projet en cours</p>
 
 
-  <div class="row">
-    <div class="col-md-6">
-      <%= image_tag 'filtre.jpg', class: 'card'%>
+  <div class="row no-gutter">
+    <div class="col-md-5">
+      <div class="card" style="background-image: url(<%= image_path 'filtre.jpg'%>);">
+
+      </div>
+
+
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-7">
       <div class="card-description">
         <p class= "subtitle-card text-center">Mission <%= @current_project.name %></p>
 
