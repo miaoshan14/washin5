@@ -2,5 +2,5 @@ class Participation < ApplicationRecord
   belongs_to :project
   belongs_to :user
 
-  has_attachment :participation_picture
+  has_attachments :participation_pictures, maximum: 10
 end

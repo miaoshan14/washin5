@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :projects, only: [:index, :show, :edit, :destroy, :new] do
-    resources :participations, only: [:create, :new]
+    resources :participations, only: [:create, :new, :show]
   end
 
   devise_for :users
@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   root to: "projects#index"
 
 
-  mount Attachinary::Engine => "/attachinary"
+ mount Attachinary::Engine => "/attachinary"
 end

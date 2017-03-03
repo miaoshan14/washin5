@@ -1,25 +1,26 @@
 class ParticipationsController < ApplicationController
   before_action :set_participation, only: [:edit, :update, :destroy]
 
-
-
   def new
     @participation = Participation.new
+    @project = Project.find(params[:project_id])
   end
 
   def create
     @project = Project.find(params[:project_id])
-    @participation = participation.new(participation_params)
+    @participation = Participation.new(participation_params)
     @participation.project = @project
-    respond_to do |format|
-      if @participation.save
-        format.html { redirect_to @participation, notice: 'Participation enregistrée' }
-        format.json { render :show, status: :created, location: @participation }
-      else
-        format.html { render :new }
-        format.json { render json: @participation.errors, status: :unprocessable_entity }
-      end
-    end
+    @participation.save
+    redirect_to project_path(@project)
+    # respond_to do |format|
+    #   if @participation.save
+    #     format.html { redirect_to @participation, notice: 'Participation enregistrée' }
+    #     format.json { render :show, status: :created, location: @participation }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @participation.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def edit
@@ -50,7 +51,16 @@ class ParticipationsController < ApplicationController
     end
 
     def participation_params
-      params.require(:participation).permit(:participation_picture)
+      params.require(:participation).permit(participation_pictures: [])
     end
+
+    # def login
+    #   if current_user == fimd dqtq
+    #     # return :authenticate_user!
+    #     return
+    #   else
+    #     new_user_registration_path
+    #   end
+    # end
 
 end
