@@ -3,21 +3,24 @@ class ParticipationsController < ApplicationController
 
   def new
     @participation = Participation.new
+    @project = Project.find(params[:project_id])
   end
 
   def create
     @project = Project.find(params[:project_id])
-    @participation = participation.new(participation_params)
+    @participation = Participation.new(participation_params)
     @participation.project = @project
-    respond_to do |format|
-      if @participation.save
-        format.html { redirect_to @participation, notice: 'Participation enregistrée' }
-        format.json { render :show, status: :created, location: @participation }
-      else
-        format.html { render :new }
-        format.json { render json: @participation.errors, status: :unprocessable_entity }
-      end
-    end
+    @participation.save
+    redirect_to project_path(@project)
+    # respond_to do |format|
+    #   if @participation.save
+    #     format.html { redirect_to @participation, notice: 'Participation enregistrée' }
+    #     format.json { render :show, status: :created, location: @participation }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @participation.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def edit

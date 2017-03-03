@@ -1,3 +1,16 @@
-<%= simple_form_for(@participation) do |f| %>
-  <%= f.input :participation_picture, as: :attachinary %>
-<% end %>
+<div class="border">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <div class="form-login">
+          <%= simple_form_for([@project, @participation]) do |f| %>
+          <%= f.input :participation_pictures, as: :attachinary %>
+          <div class="form-actions">
+            <%= f.button :submit, class: "btn btn-danger btn_log" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
