@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   root to: "projects#index"
 
 
-  mount Attachinary::Engine => "/attachinary"
+ mount Attachinary::Engine => "/attachinary"
 end
