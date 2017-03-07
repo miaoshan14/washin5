@@ -25,16 +25,21 @@
       <%= link_to 'participer', new_project_participation_path(@project), class: "btn-lg btn-danger" %>
     </div>
     <div class="col-md-5">
-      <h3> <%= pluralize @project.users.count, "Washeur" %> ont déjà participé </h3>
       <div class="row">
-        <% @project.last_participations.each do |participation| %>
-        <% if participation.picture != nil %>
-        <div class="col-xs-6 col-sm-3 mini_picture">
-          <%= image_tag cl_image_path(participation.picture.path, height: 300, width: 400, crop: :fill), class: "picture_thumbnail" %>
-        </div>
+      <h3> Déjà <%= pluralize @project.users.count, "washeur" %> sur ce projet </h3>
+        <% if @project.participations != nil %>
+          <% @project.last_participations.each do |participation| %>
+            <% if participation.picture != nil %>
+            <div class="col-xs-6 col-sm-3 mini_picture">
+              <%= image_tag cl_image_path(participation.picture.path, height: 300, width: 400, crop: :fill), class: "picture_thumbnail" %>
+            <% else %>
+              <%= image_tag 'Selfie_icon.png', class: "col-xs-6 col-sm-3 mini_picture"%>
+            <% end %>
+            </div>
+          <% end %>
         <% else %>
-          <%= image_tag 'filtre.jpg' %>
-        <% end %>
+          <h3>Soyez le 1er washeur à participer !</h3>
+          <%= image_tag 'Selfie_icon.png', class: "col-xs-6 col-sm-3 mini_picture"%>
         <% end %>
       </div>
     </div>
