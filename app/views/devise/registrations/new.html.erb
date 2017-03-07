@@ -1,28 +1,31 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2>S'inscrire</h2>
+<div class="border">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+          <div class="form-login">
+            <h2>S'inscrire</h2>
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-        <div class="field">
-          <%= f.input :first_name %>
-          <%= f.input :last_name %>
-          <%= f.input :email, autofocus: true %>
-          <%= f.input :password, autocomplete: "off" %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br/>
-          <%= f.input :password_confirmation, autocomplete: "off" %>
+              <div class="field">
+                <%= f.input :first_name, label: "Prénom" %>
+                <%= f.input :last_name, label: "Nom" %>
+                <%= f.input :email, autofocus: true %>
+                <%= f.input :password, autocomplete: "off", label: "Mot de passe" %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br/>
+                <%= f.input :password_confirmation, autocomplete: "off", label: "Confirmer le mot de passe" %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Se connecter", class: "btn btn-default" %>
+              </div>
+            <% end %>
+
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
-
-        <div class="actions">
-          <%= f.submit "Sign up", class: "btn btn-default" %>
-        </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
-    </div>
+      </div>
   </div>
 </div>
