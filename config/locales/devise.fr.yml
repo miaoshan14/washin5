@@ -1,0 +1,65 @@
+fr:
+  devise:
+    confirmations:
+      confirmed: "Votre adresse e-mail a été confirmée avec succès."
+      send_instructions: "Vous recevrez un courriel avec des instructions sur la façon de confirmer votre adresse e-mail dans quelques minutes."
+      send_paranoid_instructions: "Si votre adresse e-mail existe dans notre base de données, vous recevrez un courriel avec des instructions sur la façon de confirmer votre adresse e-mail dans quelques minutes."
+
+    failure:
+      already_authenticated: "Vous êtes déjà connecté."
+      inactive: "Votre compte n'est pas encore activé."
+      invalid: "Mot de passe% {authentication_keys} non valide."
+      locked: "Votre compte est bloqué."
+      last_attempt: "Vous avez encore une tentative avant que votre compte soit verrouillé."
+      not_found_in_database: "Mot de passe% {authentication_keys} non valide."
+      timeout: "Votre session a expiré. Veuillez vous reconnecter pour continuer."
+      unauthenticated: "Vous devez vous connecter ou vous inscrire avant de continuer."
+      unconfirmed: "Vous devez confirmer votre adresse e-mail avant de continuer."
+
+    mailer:
+      confirmation_instructions:
+        subject: "Instructions de confirmation"
+      reset_password_instructions:
+        subject: "Réinitialiser les instructions de mot de passe"
+      unlock_instructions:
+        subject: "Instructions de déverrouillage"
+      password_change:
+        subject: "Mot de passe changé"
+    omniauth_callbacks:
+      failure: Impossible de vous authentifier à partir de% {kind} car \"% {reason} \ "."
+      success: "Authentification réussie depuis le compte% {kind}"
+    passwords:
+      no_token: "Vous ne pouvez pas accéder à cette page sans un email de réinitialisation de mot de passe. Si vous venez d'un email de réinitialisation de mot de passe, assurez-vous d'utiliser l'URL complète fournie."
+      send_instructions: "Vous recevrez un courriel avec des instructions sur la façon de réinitialiser votre mot de passe dans quelques minutes."
+      send_paranoid_instructions: "Si votre adresse e-mail existe dans notre base de données, vous recevrez un lien de récupération de mot de passe à votre adresse e-mail dans quelques minutes."
+      updated: "Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté."
+      updated_not_active: "Votre mot de passe a été changé avec succès."
+    registrations:
+      destroyed: Au revoir! Votre compte a été annulé avec succès. Nous espérons te revoir bientôt.
+      signed_up: "Bienvenue! Vous vous êtes enregistré avec succès."
+      signed_up_but_inactive: "Vous êtes abonné, mais nous n'avons pas pu vous connecter car votre compte n'est pas encore activé."
+      signed_up_but_locked: "Vous vous êtes enregistré avec succès, mais nous n'avons pas pu vous connecter parce que votre compte est verrouillé."
+      signed_up_but_unconfirmed: "Un message avec un lien de confirmation a été envoyé à votre adresse e-mail. Suivez le lien pour activer votre compte."
+      update_needs_confirmation: "Vous avez mis à jour votre compte avec succès, mais nous devons vérifier votre nouvelle adresse e-mail. Veuillez vérifier votre courriel et cliquez sur le lien confirmer pour confirmer votre nouvelle adresse e-mail."
+      updated: "Votre compte a été mis à jour avec succès."
+
+    sessions:
+      signed_in: "Connecté avec succès."
+      signed_out: "Déconnecté avec succès."
+      already_signed_out: "Déconnection réalisée avec succés."
+    unlocks:
+      send_instructions: "Vous recevrez un courriel avec des instructions sur la façon de déverrouiller votre compte dans quelques minutes."
+      send_paranoid_instructions: "Si votre compte existe, vous recevrez un courriel avec des instructions sur la façon de le déverrouiller en quelques minutes."
+      unlocked: "Votre compte a été débloqué avec succès. Veuillez vous connecter pour continuer."
+
+  errors:
+    messages:
+      already_confirmed: "A déjà été confirmé, s'il vous plaît essayer de signer"
+      confirmation_period_expired: "Doit être confirmé dans% {period}, veuillez en demander un nouveau"
+      expired: "A expiré, s'il vous plaît demander un nouveau"
+      not_found: "n'existe pas"
+      not_locked: "N'était pas verrouillé"
+      not_saved:
+        one: "Une erreur a interdit l'enregistrement de% {resource}:"
+        other: "% {Count} erreurs interdit à% {resource} d'être enregistré:"
+

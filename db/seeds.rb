@@ -24,4 +24,4 @@ urls = [
 
 participation = Participation.new
 participation.save!
-participation.participation_picture = urls # Multi-upload happens here
+#participation.participation_pictures = urls # Multi-upload happens here
