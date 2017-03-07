@@ -7,6 +7,17 @@ class User < ApplicationRecord
 
   has_many :participations
 
+    def self.find_for_messenger(facebook_id)
+      user = User.find_by_facebook_id(facebook_id)
+      unless user
+        user = User.create(facebook_id: facebook_id)
+        user.email = "fake_email_#{facebook_id}@facebook.com"
+        user.password = Devise.friendly_token[0,20]
+        user.save
+      end
+      user
+    end
+
     def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
