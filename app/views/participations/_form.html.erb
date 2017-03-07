@@ -4,9 +4,9 @@
         <div class="col-xs-12 col-sm-4 col-sm-offset-4">
           <div class="form-login">
           <%= simple_form_for([@project, @participation]) do |f| %>
-          <%= f.input :participation_pictures, as: :attachinary %>
+          <%= f.input :participation_pictures, as: :attachinary, accept: "image" %>
           <div class="form-actions">
-            <%= f.button :submit, class: "btn btn-danger btn_log" %>
+            <%= f.button :submit, class: "btn btn-card" %>
           </div>
         <% end %>
         </div>
