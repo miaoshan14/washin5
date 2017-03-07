@@ -5,22 +5,18 @@
         <strong>Name:</strong>
         <%= @project.name %>
       </p>
-
       <p>
         <strong>Description:</strong>
         <%= @project.description %>
       </p>
-
       <p>
         <strong>Location:</strong>
         <%= @project.location %>
       </p>
-
       <p>
         <strong>Pictures goal:</strong>
         <%= @project.pictures_goal %>
       </p>
-
       <p>
         <strong>Project picture:</strong>
         <%= @project.project_picture %>
@@ -30,15 +26,17 @@
     </div>
     <div class="col-md-5">
       <h3> <%= pluralize @project.users.count, "Washeur" %> ont déjà participé </h3>
-
       <div class="row">
-        <% @project.last_participations(@project.id).each do |participation| %>
+        <% @project.last_participations.each do |participation| %>
+        <% if participation.picture != nil %>
         <div class="col-xs-6 col-sm-3 mini_picture">
           <%= image_tag cl_image_path(participation.picture.path, height: 300, width: 400, crop: :fill), class: "picture_thumbnail" %>
         </div>
+        <% else %>
+          <%= image_tag 'filtre.jpg' %>
+        <% end %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
