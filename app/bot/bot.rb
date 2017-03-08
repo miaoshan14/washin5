@@ -37,6 +37,7 @@ Bot.on :postback do |postback|
   if postback.payload == 'PROJECTS_COMPLETED'
     UserMessenger.start_completed(facebook_id).deliver_now
   end
+
 end
 
 Bot.on :optin do |optin|

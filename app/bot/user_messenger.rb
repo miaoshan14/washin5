@@ -23,13 +23,27 @@ class UserMessenger < BaseMessenger
 
 
   def welcome(facebook_id)
-    message(to: facebook_id,
+    messages(
+      to: facebook_id,
+      messages: [
+        {
+          attachment:{
+            type:"image",
+            payload:{
+              url:"http://www.washin5challenge.com/assets/logo-e09b626c392be755c3d3a0263ed9bf01f29b66b0251dd37661322264ef258237.png"
+            }
+          }
+        }
+      ]
+    )
+    message(
+      to: facebook_id,
       message: {
         attachment:{
           type:"template",
           payload:{
             template_type:"button",
-            text: "Veux-tu partciper à un challenge ?",
+            text: "Wash in 5 Challenge projet d'accés à l'eau collaboratif. Veux-tu partciper à un challenge ?",
             buttons:[
               {
                 type:"postback",
@@ -43,14 +57,22 @@ class UserMessenger < BaseMessenger
               },
               {
                 type:"postback",
-                title:"Projets en cours",
+                title:"Projets réaliser",
                 payload:"PROJECTS_COMPLETED"
               }
             ]
+
           }
         }
       }
     )
+
+    message(
+      to: facebook_id,
+      message: {
+          text: "Rejoins la communauté Wash in 5 !"
+        }
+      )
   end
 
 
