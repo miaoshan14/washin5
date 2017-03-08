@@ -21,5 +21,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
-  hello: "Coucou la famille"
+  activerecord:
+    attributes:
+      participation:
+        participation_pictures: "Sélectionner votre photo"
 
