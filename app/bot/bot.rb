@@ -29,6 +29,14 @@ Bot.on :postback do |postback|
   if postback.payload == 'START_CHALLENGE'
     UserMessenger.start_shower(facebook_id).deliver_now
   end
+
+  if postback.payload == 'RUNNING_PROJECTS'
+    UserMessenger.start_project(facebook_id).deliver_now
+  end
+
+  if postback.payload == 'PROJECTS_COMPLETED'
+    UserMessenger.start_completed(facebook_id).deliver_now
+  end
 end
 
 Bot.on :optin do |optin|
