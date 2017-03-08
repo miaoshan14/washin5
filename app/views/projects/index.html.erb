@@ -15,15 +15,15 @@
           </div>
 
           <div class="banner-bubble">
-            <h3> Vous avez déjà économisé <span class="banner-bubble_counter"><%= @liters_count %></span> L d'eau</h3>
+            <h3> Vous avez déjà économisé <div class="banner-bubble_counter"><%= @liters_count %></div> L d'eau</h3>
           </div>
 
           <div class="row">
             <div class="col-sm-4 left">
-              <%= @projects_done_count %> projets réalisés
+              <%= @projects_done_count %> Projets réalisés
             </div>
           <div class="col-sm-4 right">
-            <%= @projects_impact_sum %>  bénéficiaires
+            <%= @projects_impact_sum %>  Bénéficiaires
           </div>
         </div>
       </div>
@@ -35,6 +35,8 @@
       <p class="text-center">Savez-vous que, dans le monde, une personne sur dix n’a pas du tout d’accès à l’eau potable, une personne sur deux n’a pas d’accès sécurisé, et que dans le même temps une douche de 9 min (moyenne nationale française) consomme près de 100 L d’eau potable ? <br >
         Avec le Wash in 5 Challenge, vous allez économiser l’eau pour la redistribuer là où elle manque.
       </p>
+
+      <!-- Projet en cours -->
       <h3>Projet en cours</h3>
       <div class="row no-gutter">
         <div class="col-md-5">
@@ -44,7 +46,6 @@
         <div class="col-md-7">
           <div class="card-description">
             <p class= "subtitle-card text-center">Mission <%= @current_project.name %></p>
-
             <div class="row">
               <div class="col-md-6">
                 <p><%= @current_project.description %> de <%= @current_project.location %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat qui fugiat atque ab aperiam saepe. Laboriosam tenetur iusto quasi ex est rem? Veritatis officiis, totam cum, velit odio itaque magnam.</p>
@@ -52,9 +53,10 @@
                 <p>De l'eau potable au quotidien pour <%= @current_project.impact %> personnes</p>
               </div>
 
+
+
               <div class="col-md-6 text-center">
-                <p>Financé par ....</p>
-                <p>Mr AVOCAT</p>
+                <p>Financé par : <strong>Mr AVOCAT</strong></p>
                   <%= image_tag 'drole-de-pain.png'%>
               </div>
             </div>
@@ -63,146 +65,75 @@
               <div class="col-md-12">
                 <p class= "subtitle">Objectif : <%= @current_project.pictures_goal %> photos</p>
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="<%=@current_project.pictures_goal%>" style="width: 40%;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="<%=@current_project.pictures_goal%>" style="<%= @current_project.participations.count %>;">
                     <span class="sr-only">40% Complete</span>
                   </div>
                 </div>
-                <p style="text-align: right">Il manque <%= @current_project.pictures_goal - 40 %> photos !</p>
+                <p style="text-align: right">Il manque <%= @current_project.pictures_goal - @current_project.participations.count %> photos !</p>
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-6">
-                <%= link_to "Participer au projet", project_path(@current_project), class: "btn btn-card"%>
+                <%= link_to "En savoir plus", project_path(@current_project), class: "btn btn-card"%>
               </div>
 
               <div class="col-md-6 share">
-                <i class="fa fa-share-alt" aria-hidden="true"></i>
+                <p>Partager</p> <i class="fa fa-share-alt" aria-hidden="true">  </i>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-
+              
     </div>
+
+    <!-- Projet à venir -->
     <div class="container">
       <div class="row">
-
-        <div class="col-xs-12 col-sm-4">
+        <h3>Projet à venir</h3>
+        <% @projects.first(3).each do |project| %>
+        <div class="col-md-4 col-xs-12">
             <!-- insert <div class="card"> -->
-          <img src="http://unsplash.it/200/200?random" alt="image-projetAVenir">
-          <% @projects.each do |project| %>
-          <h4 class="capitalize1"><%= project.name %></h4>
-          <p>Objectif : </p> <br />
-          <%= project.description %>
-
-          <p>Financé par</p>
-
-              <p>Impact ?</p>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-            <!-- insert <div class="card"> -->
-          <img src="http://unsplash.it/200/200?random" alt="image-projetAVenir">
-
-          <h4 class="capitalize"> Mission canalisations</h4>
-          <p>Objectif : </p>
-
-
-          <p>Financé par :</p>
-
-          <p>Impact ?</p>
-
-        </div>
-        <div class="col-xs-12 col-sm-4">
-            <!-- insert <div class="card"> -->
-          <img src="http://unsplash.it/200/200?random" alt="image-projetAVenir">
-          <h4 class="capitalize"> Mission canalisations</h4>
-          <p>Objectif : </p>
-
-          <p>Financé par :</p>
-
-          <p>Impact ?</p>
-
-        </div>
-      </div>
-    </div>
-        <% end %>
-
-    <%= link_to 'New Project', new_project_path %>
-    <div class="bloc-empty"></div>
-
-          <!-- Test -->
-
-          <h3>Projet en réalisés</h3>
-
-          <div class="col-md-3 picture_project_finish">
-            <img src="http://unsplash.it/200/200?random" alt="Image projet réalisés">
-            <img src="http://unsplash/it/200/200?random" alt="image-projetAVenir">
-        <div class="row">
-          <div class="col-md-12">
-            <p class= "subtitle">Objectif : <%= @current_project.pictures_goal %> photos</p>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="<%=@current_project.pictures_goal%>" style="width: <%=@current_project.participations.count%>%;">
-                <span class="sr-only">40% Complete</span>
+            <div class="thumbnail">
+            <img src="http://unsplash.it/242/200?random" alt="image-projetAVenir">            
+              <div class="caption">
+                <h3 class="capitalize"><%= project.name %></h3>                  
+                  <p>Objectif : <%= project.pictures_goal %> photos</p> <br />
+                    <%= project.description %>
+                  <p>Financé par : <strong>cleaning-bio34</strong></p>
+                  <p>Impact : <%= project.impact %> personnes</p>
               </div>
             </div>
-            <p style="text-align: right">Il manque <%= @current_project.pictures_goal - @current_project.participations.count %> photos !</p>
-          </div>
         </div>
-            <p>Financé par :</p>
+        <% end %>
+      </div>
+    </div>
+          
 
-            <p>Impact ?</p>
-            <i class="fa fa-share-alt" aria-hidden="true" ></i>
-
-          </div>
-          <div class="col-md-3 picture_project_finish">
-            <img src="http://unsplash.it/300/200?random" alt="Image projet réalisés">
-            <img src="http://unsplash/it/400/200?random" alt="image-projetAVenir">
-
-            <h4 class="capitalize"> Mission canalisations</h4>
-            <p>Objectif : </p>
-
-
-            <p>Financé par :</p>
-
-            <p>Impact ?</p>
-
-          </div>
-          <div class="col-md-3 picture_project_finish">
-            <img src="http://unsplash.it/300/200?random" alt="Image projet réalisés">
-            <img src="http://unsplash/it/400/200?random" alt="image-projetAVenir">
-
-            <h4 class="capitalize"> Mission canalisations</h4>
-            <p>Objectif : </p>
-
-            <p>Financé par :</p>
-
-            <p>Impact ?</p>
-          </div>
-          <div class="col-md-3 picture_project_finish">
-            <img src="http://unsplash.it/200/200?random" alt="Image projet réalisés">
-            <img src="http://unsplash/it/200/200?random" alt="image-projetAVenir">
-
-            <h4 class="capitalize"> Mission canalisations</h4>
-            <p>Objectif : </p>
-
-            <p>Financé par :</p>
-
-            <p>Impact ?</p>
-          </div>
-
+    <!-- Projet à venir -->
+        <h3>Projet réalisés</h3>
           <div class="container">
             <div class="row">
-              <div class="col-xs-12">
-                <img src="mosaique.jpg" alt="Image participants">
+              <div class="col-md-3 col-xs-12">
+              <div class="thumbnail">
+                <img src="http://unsplash.it/242/200?random" alt="image-projetRéalisé">            
+              <div class="caption">
+                <h3></h3>                  
+
+
+                
               </div>
-              <div class="follow_us">
+            </div>
+          </div>
+
+    <!-- Follow us -->
+          <div class="follow_us">
                 <h4>Rejoignez-Nous</h4>
+                <img src="mosaique.jpg" alt="Image participants">
                 <i class="fa fa-facebook social"> Facebook</i>
                 <i class="fa fa-twitter social"> Twitter</i>
                 <i class="fa fa-instagram social "> instagram</i>
-              </div>
-            </div>
           </div>
 </div>
