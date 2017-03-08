@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   root to: "projects#index"
 
 
- mount Attachinary::Engine => "/attachinary"
+  mount Attachinary::Engine => "/attachinary"
+
+  mount Facebook::Messenger::Server, at: 'bot'
 end

@@ -1,3 +1,4 @@
+
   <div class="banner" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(125,185,232,0) 100%), url(<%= image_path 'boys_WI5.jpg' %>);">
       <div class="container">
         <div class="banner-content">
@@ -138,11 +139,17 @@
           <div class="col-md-3 picture_project_finish">
             <img src="http://unsplash.it/200/200?random" alt="Image projet réalisés">
             <img src="http://unsplash/it/200/200?random" alt="image-projetAVenir">
-
-            <h4 class="capitalize"> Mission canalisations</h4>
-            <p>Objectif : </p>
-
-
+        <div class="row">
+          <div class="col-md-12">
+            <p class= "subtitle">Objectif : <%= @current_project.pictures_goal %> photos</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="<%=@current_project.pictures_goal%>" style="width: <%=@current_project.participations.count%>%;">
+                <span class="sr-only">40% Complete</span>
+              </div>
+            </div>
+            <p style="text-align: right">Il manque <%= @current_project.pictures_goal - @current_project.participations.count %> photos !</p>
+          </div>
+        </div>
             <p>Financé par :</p>
 
             <p>Impact ?</p>

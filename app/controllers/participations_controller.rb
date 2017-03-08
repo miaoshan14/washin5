@@ -10,8 +10,13 @@ class ParticipationsController < ApplicationController
     @project = Project.find(params[:project_id])
     @participation = Participation.new(participation_params)
     @participation.project = @project
-    @participation.save
-    redirect_to project_path(@project)
+    @participation.user = current_user
+
+    if @participation.save
+      redirect_to project_path(@project)
+    else
+      render :new
+    end
     # respond_to do |format|
     #   if @participation.save
     #     format.html { redirect_to @participation, notice: 'Participation enregistrée' }

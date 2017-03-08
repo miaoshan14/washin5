@@ -25,32 +25,19 @@
         <strong>Project picture:</strong>
         <%= @project.project_picture %>
       </p>
-      <p id="notice"><%= notice %></p>
       <br>
       <%= link_to 'participer', new_project_participation_path(@project), class: "btn-lg btn-danger" %>
     </div>
     <div class="col-md-5">
-      <h3>12 Washers ont deja participe </h3>
-      <tr class="picture_project">
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=1066" alt="image galerie"></td>
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=1014" alt="image galerie"></td>
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=1012" alt="image galerie"></td>
-        </tr>
-          <tr class="picture_project">
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=996" alt="image galerie"></td>
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=977" alt="image galerie"></td>
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=970" alt="image galerie"></td>
-        </tr>
-          <tr class="picture_project">
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=944" alt="image galerie"></td>
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=933" alt="image galerie"></td>
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=914" alt="image galerie"></td>
-      </tr>
-          <tr class="picture_project">
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=912" alt="image galerie"></td>
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=896" alt="image galerie"></td>
-        <td class="picture_thumbnail"><img src="https://unsplash.it/100/100?image=890" alt="image galerie"></td>
-      </tr>
+      <h3> <%= pluralize @project.users.count, "Washeur" %> ont déjà participé </h3>
+
+      <div class="row">
+        <% @project.last_participations(@project.id).each do |participation| %>
+        <div class="col-xs-6 col-sm-3 mini_picture">
+          <%= image_tag cl_image_path(participation.picture.path, height: 300, width: 400, crop: :fill), class: "picture_thumbnail" %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
