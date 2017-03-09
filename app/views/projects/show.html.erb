@@ -24,11 +24,15 @@
       </div>
       <p style="text-align: right">Il manque <%= @project.pictures_goal - @project.participations.count%> photos !</p>
     </div>
+
     <div class="col-xs-12 col-md-6 text-center">
-      <%= link_to "Participer au projet", new_project_participation_path(@project), class: "btn btn-card"%>
-      <div>Partager
+      <div>
+        <%= link_to "Participer au projet", new_project_participation_path(@project), class: "btn btn-card"%>
+      </div>
+      <div class="share">
+        <p>Partager</p>
         <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank" class="bg-facebook">
-          <i class="fa fa-facebook padded"></i>
+          <i class="fa fa-facebook"></i>
         </a>
         <a href="https://twitter.com/washin5challeng" target="_blank" class="bg-twitter">
           <i class="fa fa-twitter"></i>
