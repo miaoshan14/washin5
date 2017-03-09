@@ -56,8 +56,6 @@
                 <p>De l'eau potable au quotidien pour <%= @current_project.impact %> personnes</p>
               </div>
 
-
-
               <div class="col-md-6 text-center">
                 <p>Financé par : <strong>Mr AVOCAT</strong></p>
                   <%= image_tag 'drole-de-pain.png'%>
@@ -81,8 +79,8 @@
                 <%= link_to "En savoir plus", project_path(@current_project), class: "btn btn-card"%>
               </div>
 
-              <div class="col-md-6 share">
-                <p>Partager</p> <img src="../images/share.svg" alt=""></i>
+              <div class="col-md-6 share text-right">
+                <p>Partager <%= image_tag("share.svg", width: '48') %> </p>
               </div>
             </div>
           </div>
@@ -100,9 +98,10 @@
         <div class="col-md-4 col-xs-12">
             <!-- insert <div class="card"> -->
             <div class="thumbnail">
-            <img src="http://unsplash.it/242/200?random" alt="image-projetAVenir">            
+
+              <%= image_tag Rails.root.join('app', 'assets/images', project.project_picture) %>
               <div class="caption">
-                <h3 class="capitalize"><%= project.name %></h3>                  
+                <h3 class="capitalize"><%= project.name %></h3>
                   <p>Objectif : <%= project.pictures_goal %> photos</p> <br />
                     <%= project.description %>
                   <p>Financé par : <strong>cleaning-bio34</strong></p>
@@ -119,7 +118,7 @@
             <div class="row">
               <div class="col-md-3 col-xs-12">
                 <div class="thumbnail">
-                  <img src="http://unsplash.it/242/200?random" alt="image-projetRéalisé">
+                  <%= image_tag 'robinets.jpg' %>
                   <div class="caption">
                     <h3 class="capitalize"></h3>
                     <p>Objectif :  200 photos</p> <br />
@@ -134,7 +133,7 @@
               <!--projet 2-->
               <div class="col-md-3 col-xs-12">
                 <div class="thumbnail">
-                  <img src="http://unsplash.it/242/200?random" alt="image-projetRéalisé">
+                  <%= image_tag 'forage_femmes.jpg' %>
                   <div class="caption">
                     <h3 class="capitalize"></h3>
                     <p>Objectif :  150 photos</p> <br />
@@ -149,7 +148,7 @@
               <!--projet 3-->
               <div class="col-md-3 col-xs-12">
                 <div class="thumbnail">
-                  <img src="http://unsplash.it/242/200?random" alt="image-projetRéalisé">
+                  <%= image_tag 'pompe_eau_femmes.jpg' %>
                   <div class="caption">
                     <h3 class="capitalize"></h3>
                     <p>Objectif : 2000 photos</p> <br />
@@ -164,7 +163,7 @@
               <!--Projet 4-->
               <div class="col-md-3 col-xs-12">
                 <div class="thumbnail">
-                  <img src="http://unsplash.it/242/200?random" alt="image-projetRéalisé">
+                  <%= image_tag 'reservoir.jpg' %>
                   <div class="caption">
                     <h3 class="capitalize"></h3>
                     <p>Objectif : 100 photos</p> <br />
@@ -179,11 +178,20 @@
           </div>
 
     <!-- Follow us -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+
+          <%= image_tag 'mosaique.png' %>
           <div class="follow_us">
-                <h4>Rejoignez-Nous</h4>
-                <img src="mosaique.jpg" alt="Image participants">
-                <i class="fa fa-facebook social"> Facebook</i>
-                <i class="fa fa-twitter social"> Twitter</i>
-                <i class="fa fa-instagram social "> instagram</i>
+            <h4 class="text-center">Rejoignez-Nous</h4>
+
+            <i class="fa fa-facebook social"> Facebook</i>
+            <i class="fa fa-twitter social"> Twitter</i>
+            <i class="fa fa-instagram social "> instagram</i>
           </div>
+        </div>
+      </div>
+    </div>
+
 </div>
