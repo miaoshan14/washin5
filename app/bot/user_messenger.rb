@@ -60,20 +60,24 @@ class UserMessenger < BaseMessenger
             buttons:[
               {
                 type:"postback",
-                title:"Voir les projets en cour",
+                title:"Projets en cour",
                 payload:"RUNNING_PROJECTS"
               },
               {
-              type: 'web_url',
-              title: 'Voir le site',
-              url: 'http://washin5.com/'
-             }
+                type: 'web_url',
+                title: 'Voir le site',
+                url: 'http://www.washin5challenge.com/'
+              }
             ]
           }
         }
       }
     )
-
+    message(to: facebook_id,
+      message: {
+        text: "Tape ok pour revenir a l'accueil"
+      }
+    )
 
   end
 
@@ -90,7 +94,8 @@ class UserMessenger < BaseMessenger
     message(to: facebook_id,
       message: {
         text: "project completed"
-      })
+      }
+    )
   end
 
 
