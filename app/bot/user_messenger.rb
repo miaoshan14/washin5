@@ -1,5 +1,7 @@
 class UserMessenger < BaseMessenger
 
+
+# 1er bouton
   def start_shower(facebook_id)
     message(to: facebook_id,
       message: {
@@ -20,7 +22,6 @@ class UserMessenger < BaseMessenger
       }
     )
   end
-
   def start_chrono(facebook_id)
     message(to: facebook_id,
       message: {
@@ -28,12 +29,12 @@ class UserMessenger < BaseMessenger
           type:"template",
           payload:{
             template_type:"button",
-            text: "tu as 5 minutes pour prendre ta douche",
+            text: "clique sur terminer quand tu as fini",
             buttons:[
               {
                 type:"postback",
-                title:"Pret ?",
-                payload:"START_CHRONO"
+                title:"Terminer",
+                payload:"UPLOAD"
               }
             ]
           }
@@ -41,7 +42,43 @@ class UserMessenger < BaseMessenger
       }
     )
   end
+  def message_chrono(facebook_id)
+    message(to: facebook_id,
+      message: {
+        text: "Déjà 5 secondes d'écoulées"
+      }
+    )
+  end
+  def picture_upload(facebook_id)
+    message(to: facebook_id,
+      message: {
+        attachment:{
+          type:"template",
+          payload:{
+            template_type:"button",
+            text: "Merci d'avoir particper ! Prend une photo et partage la sur notre page #washin5",
+            buttons:[
+              {
+                type:"postback",
+                title:"Voir les projets en cour",
+                payload:"RUNNING_PROJECTS"
+              },
+              {
+              type: 'web_url',
+              title: 'Voir le site',
+              url: 'http://washin5.com/'
+             }
+            ]
+          }
+        }
+      }
+    )
 
+
+  end
+
+
+# 2eme bouton
   def start_project(facebook_id)
     message(to: facebook_id,
       message: {
