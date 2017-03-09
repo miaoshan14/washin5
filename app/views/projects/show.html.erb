@@ -44,34 +44,35 @@
     </div>
   </div>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <p><%= @project.description %> de <%= @project.location %> en Inde.</p>
+        <p class="subtitle">L'impact</p>
+        <p>De l'eau potable au quotidien pour <%=@project.impact %> personnes.</p>
+        <p class="subtitle">Financé par</p>
+        <p>Ma Rénov <%=image_tag 'ma_renov_logo.jpg', height: 100, width: 200 %></p>
+        <p>Les filtres en céramique pour le traitement des eaux sont en usage depuis plusieurs siècles. Il s’agit de dispositifs permettant de potabiliser de l’eau de surface en la filtrant à travers un matériau poreux, ici la céramique. Les tests ont montré qu'ils peuvent éliminer ou désactiver presque toutes les bactéries et parasites.</p>
+      </div>
 
-  <div class="row">
-    <div class="col-md-7">
-      <p><%= @project.description %> de <%= @project.location %> en Inde.</p>
-      <p class="subtitle">L'impact</p>
-      <p>De l'eau potable au quotidien pour <%=@project.impact %> personnes.</p>
-      <p class="subtitle">Financé par</p>
-      <p>Ma Rénov <%=image_tag 'ma_renov_logo.jpg', height: 100, width: 200 %></p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla impedit vero voluptatem animi rerum quam deserunt, ullam vitae quia distinctio molestiae, aliquam ipsum nobis! Distinctio quis, eligendi accusantium fugit illo!</p>
-    </div>
-
-    <div class="col-md-5 picture-grid">
-      <div class="row">
-        <% if @project.participations.size > 0 %>
-          <h3> Déjà <%= @project.users.count %> washeur<%= @project.users.count > 1 ? "s" : "" %> sur ce projet </h3>
-          <% @project.last_participations.each do |participation| %>
-            <% if participation.picture != nil %>
-            <div class="col-xs-6 col-sm-3 mini_picture">
-              <%= image_tag cl_image_path(participation.picture.path, height: 300, width: 400, crop: :fill), class: "picture_thumbnail" %>
-            <% else %>
-              <%= image_tag 'Selfie_icon.png', class: "col-xs-6 col-sm-3 mini_picture"%>
+      <div class="col-md-5 picture-grid">
+        <div class="row">
+          <% if @project.participations.size > 0 %>
+            <h3 class='text-center'> Déjà <%= @project.users.count %> washeur<%= @project.users.count > 1 ? "s" : "" %> sur ce projet </h3>
+            <% @project.last_participations.each do |participation| %>
+              <% if participation.picture != nil %>
+              <div class="col-xs-6 col-sm-3 mini_picture">
+                <%= image_tag cl_image_path(participation.picture.path, height: 300, width: 400, crop: :fill), class: "picture_thumbnail" %>
+              <% else %>
+                <%= image_tag 'Selfie_icon.png', class: "col-xs-6 col-sm-3 mini_picture"%>
+              <% end %>
+              </div>
             <% end %>
-            </div>
+          <% else %>
+            <h3 class='text-center'>Soyez le 1er washeur à participer !</h3>
+            <%= image_tag 'Selfie_icon.png', class: "col-xs-6 col-sm-3 mini_picture"%>
           <% end %>
-        <% else %>
-          <h3>Soyez le 1er washeur à participer !</h3>
-          <%= image_tag 'Selfie_icon.png', class: "col-xs-6 col-sm-3 mini_picture"%>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>

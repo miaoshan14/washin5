@@ -1,5 +1,4 @@
 .banner {
-  color: white;
   text-align: center;
   height: 300px;
   background-size: cover;
@@ -16,6 +15,7 @@
 
   &-content {
     position: relative;
+    color: white;
   }
 
   &-bubble {

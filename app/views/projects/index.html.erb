@@ -20,14 +20,15 @@
             <p class= "subtitle-card text-center">Mission <%= @current_project.name %></p>
             <div class="row">
               <div class="col-md-6">
-                <p><%= @current_project.description %> de <%= @current_project.location %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat qui fugiat atque ab aperiam saepe. Laboriosam tenetur iusto quasi ex est rem? Veritatis officiis, totam cum, velit odio itaque magnam.</p>
+                <p><%= @current_project.description %> de <%= @current_project.location %>. Installation d'un filtre à eau d'une contenance de 40 litres, transportable et facile à mettre en place.</p>
                 <p class= "subtitle"> L'impact</p>
                 <p>De l'eau potable au quotidien pour <%= @current_project.impact %> personnes</p>
               </div>
 
               <div class="col-md-6 text-center">
-                <p>Financé par : <strong>Mr AVOCAT</strong></p>
-                  <%= image_tag 'drole-de-pain.png'%>
+                <p>Financé par : <strong>Drôle de Pain</strong></p>
+                  <div class="image_resize" style="background-image: url(<%= image_path 'drole_de_pain.jpg'%>);">
+                  </div>
               </div>
             </div>
 
@@ -35,7 +36,7 @@
               <div class="col-md-12">
                 <p class= "subtitle">Objectif : <%= @current_project.pictures_goal %> photos</p>
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="<%=@current_project.pictures_goal%>" style="<%= @current_project.participations.count %>;">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="<%=@current_project.pictures_goal%>" style="width:<%= @current_project.participations.count %>%;">
                     <span class="sr-only">40% Complete</span>
                   </div>
                 </div>
@@ -56,13 +57,13 @@
         </div>
       </div>
 
-              
+
     </div>
 
     <!-- Projet à venir -->
     <div class="container">
       <div class="row">
-        <h3 class="text-center title_projet">Projet à venir</h3>
+        <h3 class="text-center title_projet">Projets à venir</h3>
         <% @projects.first(3).each do |project| %>
         <div class="col-md-4 col-xs-12">
             <!-- insert <div class="card"> -->
@@ -73,7 +74,7 @@
                 <h3 class="capitalize"><%= project.name %></h3>
                   <p>Objectif : <%= project.pictures_goal %> photos</p> <br />
                     <%= project.description %>
-                  <p>Financé par : <strong>cleaning-bio34</strong></p>
+                  <p>Financé par : <strong>Cleaning bio34</strong></p>
                   <p>Impact : <%= project.impact %> personnes</p>
               </div>
             </div>
@@ -82,7 +83,7 @@
       </div>
     </div>
     <!-- Projet réalisés -->
-        <h3>Projet réalisés</h3>
+        <h3>Projets réalisés</h3>
           <div class="container">
             <div class="row">
               <div class="col-md-3 col-xs-12">
@@ -92,9 +93,9 @@
                     <h3 class="capitalize"></h3>
                     <p>Objectif :  200 photos</p> <br />
 
-                    <p>Financé par : <strong>Cjd-Montpellier</strong></p>
+                    <p>Financé par : <strong>Cjd Montpellier</strong></p>
                     <p>Impact :  100 personnes</p>
-                
+
                   </div>
                 </div>
               </div>
@@ -107,7 +108,7 @@
                     <h3 class="capitalize"></h3>
                     <p>Objectif :  150 photos</p> <br />
 
-                    <p>Financé par : <strong>cleaning-bio34</strong></p>
+                    <p>Financé par : <strong>Cleaning bio34</strong></p>
                     <p>Impact : 70 personnes</p>
 
                   </div>
@@ -137,7 +138,7 @@
                     <h3 class="capitalize"></h3>
                     <p>Objectif : 100 photos</p> <br />
 
-                    <p>Financé par : <strong>Wantedweb</strong></p>
+                    <p>Financé par : <strong>Wanted Web</strong></p>
                     <p>Impact : 80 personnes</p>
 
                   </div>
