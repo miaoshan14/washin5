@@ -11,7 +11,7 @@ fr:
       invalid: "Courriel ou mot de passe non valide."
       locked: "Votre compte est bloqué."
       last_attempt: "Vous avez encore une tentative avant que votre compte soit verrouillé."
-      not_found_in_database: "Mot de passe% {authentication_keys} non valide."
+      not_found_in_database: "Email ou mot de passe non valide."
       timeout: "Votre session a expiré. Veuillez vous reconnecter pour continuer."
       unauthenticated: "Vous devez vous connecter ou vous inscrire avant de continuer."
       unconfirmed: "Vous devez confirmer votre adresse e-mail avant de continuer."
