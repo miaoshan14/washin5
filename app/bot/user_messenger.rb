@@ -9,11 +9,11 @@ class UserMessenger < BaseMessenger
           type:"template",
           payload:{
             template_type:"button",
-            text: "tu as 5 minutes pour prendre ta douche",
+            text: "Tu as 5 minutes pour prendre ta douche",
             buttons:[
               {
                 type:"postback",
-                title:"Pret ?",
+                title:"Prêt ?",
                 payload:"START_CHRONO"
               }
             ]
@@ -33,7 +33,7 @@ class UserMessenger < BaseMessenger
             buttons:[
               {
                 type:"postback",
-                title:"Terminer",
+                title:"Terminé",
                 payload:"UPLOAD"
               }
             ]
@@ -50,22 +50,30 @@ class UserMessenger < BaseMessenger
     )
   end
   def picture_upload(facebook_id)
+        message(to: facebook_id,
+      message: {
+        text: "Prends une photo pour valider ta participation."
+      }
+    )
+  end
+
+  def thank_you(facebook_id)
     message(to: facebook_id,
       message: {
         attachment:{
           type:"template",
           payload:{
             template_type:"button",
-            text: "Merci d'avoir particper !",
+            text: "Merci d'avoir particpé !",
             buttons:[
               {
                 type:"postback",
-                title:"Projets en cour",
+                title:"Projet en cours",
                 payload:"RUNNING_PROJECTS"
               },
               {
                 type: 'web_url',
-                title: 'Voir le site',
+                title: 'Va voir ta photo sur le site',
                 url: 'http://www.washin5challenge.com/'
               }
             ]
@@ -75,12 +83,13 @@ class UserMessenger < BaseMessenger
     )
     message(to: facebook_id,
       message: {
-        text: "Prend une photo pour valider ta participation."
-      }
-    )
+        text: "Reviens quand tu veux et partage avec tes amis !"
+        }
+      )
+
     message(to: facebook_id,
       message: {
-        text: "Merci. Tape ok pour revenir au menu"
+        text: "Tape ok pour revenir au menu"
       }
     )
 
