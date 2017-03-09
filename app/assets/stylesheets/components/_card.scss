@@ -102,7 +102,11 @@
   font-style: italic;
   h2 {
     font-size: 20px;
+    color: #0084FF;
+    text-align: right;
+    margin-top: 10px;
   }
+
 }
 
 .share i
@@ -126,4 +130,8 @@
   border: 1px white solid;
   padding: 10px;
   color: #fff;
+}
+
+.fb-send-to-messenger {
+  margin: 10px 0;
 }

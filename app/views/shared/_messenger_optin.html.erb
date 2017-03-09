@@ -1,16 +1,19 @@
-<% if current_user && !current_user.facebook_id %>
-  <div class="text-center catch-phrase">
-    <h2>Recevez nos challenges sur Messenger</h2>
-    <p>Cliquez sur le bouton ci-dessous</p>
-    <div class="fb-send-to-messenger"
-      messenger_app_id="<%= ENV['APPLICATION_ID'] %>"
-      page_id="<%= ENV['FACEBOOK_PAGE_ID'] %>"
-      data-ref="<%= current_user.id %>"
-      color="blue"
-      size="xlarge">
+<div class="container">
+  <% if current_user && !current_user.facebook_id %>
+    <div class="row text-center catch-phrase">
+      <div class="col-xs-12 col-sm-6 right">
+        <h2>Recevez nos challenges sur Messenger</h2>
+      </div>
+      <div class="col-xs-12 col-sm-6 fb-send-to-messenger left"
+        messenger_app_id="<%= ENV['APPLICATION_ID'] %>"
+        page_id="<%= ENV['FACEBOOK_PAGE_ID'] %>"
+        data-ref="<%= current_user.id %>"
+        color="blue"
+        size="xlarge">
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <script>
 

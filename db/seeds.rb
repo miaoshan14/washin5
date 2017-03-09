@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Project.destroy_all
-
+Participation.destroy_all
+User.destroy_all
 
 projects = Project.create!( [ {name: "Filtre à eau", description: "Fournir de l'eau potable à l'école", location: "Asharympathy", pictures_goal: 100, project_picture: "", current: true, done: false, future: false, impact: 30},
                       {name: "Forage", description: "Fournir de l'eau potable au village", location: "Theni", pictures_goal: 1000, project_picture: "", current: false, done: false, future: true, impact: 700},
