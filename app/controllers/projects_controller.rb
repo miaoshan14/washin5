@@ -7,10 +7,6 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
 
-    @projects_done_count = Project.where(done: true).count
-    @projects_impact_sum = Project.where(done: true).sum(:impact)
-    @users_count = User.count
-    @liters_count = Participation.count * 40 + 52640
     @current_project = Project.where(:current => true)[0]
   end
 

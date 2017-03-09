@@ -7,6 +7,20 @@ class UserMessenger < BaseMessenger
       })
   end
 
+  def start_project(facebook_id)
+    message(to: facebook_id,
+      message: {
+        text: "project"
+      })
+  end
+
+  def start_completed(facebook_id)
+    message(to: facebook_id,
+      message: {
+        text: "project completed"
+      })
+  end
+
 
   def welcome(facebook_id)
     message(to: facebook_id,
@@ -21,6 +35,16 @@ class UserMessenger < BaseMessenger
                 type:"postback",
                 title:"Je participe",
                 payload:"START_CHALLENGE"
+              },
+              {
+                type:"postback",
+                title:"Projets en cours",
+                payload:"RUNNING_PROJECTS"
+              },
+              {
+                type:"postback",
+                title:"Projets en cours",
+                payload:"PROJECTS_COMPLETED"
               }
             ]
           }

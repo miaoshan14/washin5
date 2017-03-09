@@ -1,3 +1,6 @@
+<% @projects_done_count = Project.where(done: true).count %>
+<% @projects_impact_sum = Project.where(done: true).sum(:impact) %>
+<% @liters_count = Participation.count * 40 + 52640 %>
 <div class="banner" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(125,185,232,0) 100%), url(<%= image_path 'boys_WI5.jpg' %>);">
     <div class="container">
 

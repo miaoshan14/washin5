@@ -1,33 +1,64 @@
+<div class="project-title">
+  <h2 class= text-center>Mission <%= @project.name %> </h2>
+
+  <div class="subtitle">
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
+    <p><%= @project.location %></p>
+    <i class="fa fa-user-o" aria-hidden="true"></i>
+    <p>Financé par Ma renov</p>
+  </div>
+
+</div>
+
+<div class="project-banner" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(125,185,232,0) 100%), url(<%= image_path "filtre_classe.jpg" %>);">
+</div>
+
+
 <div class="container">
+  <div class="row project-card">
+    <div class="col-xs-12 col-md-6 ">
+      <p class= "subtitle">Objectif : <%= @project.pictures_goal %> photos</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="<%=@project.pictures_goal%>" style="width: <%=@project.participations.count%>%;">
+        </div>
+      </div>
+      <p style="text-align: right">Il manque <%= @project.pictures_goal - @project.participations.count%> photos !</p>
+    </div>
+
+    <div class="col-xs-12 col-md-6 text-center">
+      <div>
+        <%= link_to "Participer au projet", new_project_participation_path(@project), class: "btn btn-card"%>
+      </div>
+      <div class="share">
+        <p>Partager</p>
+        <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank" class="bg-facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/washin5challeng" target="_blank" class="bg-twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/washin5challenge" target="_blank" class="bg-instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
   <div class="row">
     <div class="col-md-7">
-      <p>
-        <strong>Name:</strong>
-        <%= @project.name %>
-      </p>
-      <p>
-        <strong>Description:</strong>
-        <%= @project.description %>
-      </p>
-      <p>
-        <strong>Location:</strong>
-        <%= @project.location %>
-      </p>
-      <p>
-        <strong>Pictures goal:</strong>
-        <%= @project.pictures_goal %>
-      </p>
-      <p>
-        <strong>Project picture:</strong>
-        <%= @project.project_picture %>
-      </p>
-      <br>
-      <%= link_to 'participer', new_project_participation_path(@project), class: "btn-lg btn-danger" %>
+      <p><%= @project.description %> de <%= @project.location %> en Inde.</p>
+      <p class="subtitle">L'impact</p>
+      <p>De l'eau potable au quotidien pour <%=@project.impact %> personnes.</p>
+      <p class="subtitle">Financé par</p>
+      <p>Ma Rénov <%=image_tag 'ma_renov_logo.jpg', height: 100, width: 200 %></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla impedit vero voluptatem animi rerum quam deserunt, ullam vitae quia distinctio molestiae, aliquam ipsum nobis! Distinctio quis, eligendi accusantium fugit illo!</p>
     </div>
-    <div class="col-md-5">
+
+    <div class="col-md-5 picture-grid">
       <div class="row">
-      <h3> Déjà <%= pluralize @project.users.count, "washeur" %> sur ce projet </h3>
-        <% if @project.participations != nil %>
+        <% if @project.participations.size > 0 %>
+          <h3> Déjà <%= @project.users.count %> washeur<%= @project.users.count > 1 ? "s" : "" %> sur ce projet </h3>
           <% @project.last_participations.each do |participation| %>
             <% if participation.picture != nil %>
             <div class="col-xs-6 col-sm-3 mini_picture">
