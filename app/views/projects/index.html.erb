@@ -99,7 +99,7 @@
             <!-- insert <div class="card"> -->
             <div class="thumbnail">
 
-              <%= image_tag Rails.root.join('app', 'assets/images', project.project_picture) %>
+              <%= image_tag project.project_picture %>
               <div class="caption">
                 <h3 class="capitalize"><%= project.name %></h3>
                   <p>Objectif : <%= project.pictures_goal %> photos</p> <br />
