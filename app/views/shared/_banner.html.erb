@@ -1,39 +1,39 @@
 <% @projects_done_count = Project.where(done: true).count %>
 <% @projects_impact_sum = Project.where(done: true).sum(:impact) %>
 <% @liters_count = Participation.count * 40 + 52640 %>
+
 <div class="banner" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(125,185,232,0) 100%), url(<%= image_path 'boys_WI5.jpg' %>);">
-    <div class="container">
-
-
-      <div class="banner-content">
-    <div class="share-links">
-      <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank" class="share-link bg-facebook">
-        <i class="fa fa-facebook"></i>
-      </a>
-      <a href="https://twitter.com/washin5challeng" target="_blank" class="share-link bg-twitter">
-        <i class="fa fa-twitter"></i>
-      </a>
-      <a href="https://www.instagram.com/washin5challenge" target="_blank" class="share-link bg-instagram">
-        <i class="fa fa-instagram"></i>
-      </a>
-    </div>
+  <div class="container">
+    <div class="banner-content">
+      <div class="share-links">
+        <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank" class="share-link bg-facebook">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/washin5challeng" target="_blank" class="share-link bg-twitter">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/washin5challenge" target="_blank" class="share-link bg-instagram">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
 
       <div class="banner-bubble">
         <h3> Vous avez déjà économisé <div class="banner-bubble_counter"><%= @liters_count %></div> L d'eau</h3>
       </div>
 
-      <div class="row">
-        <div class="col-sm-4 left">
-          <%= @projects_done_count %> projets réalisés
-        </div>
-        <div class="col-sm-4 right">
-          <%= @projects_impact_sum %>  bénéficiaires
+      <div class="history_project">
+        <div class="row">
+          <div class="col-sm-4 left">
+            <%= @projects_done_count %> <p>Projets réalisés</p>
+          </div>
+          <div class="col-sm-4 right">
+            <%= @projects_impact_sum %> <p>Bénéficiaires</p>
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
-
 
 

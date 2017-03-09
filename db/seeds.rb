@@ -10,10 +10,10 @@ Project.destroy_all
 Participation.destroy_all
 User.destroy_all
 
-projects = Project.create!( [ {name: "Filtre à eau", description: "Fournir de l'eau potable à l'école", location: "Asharympathy", pictures_goal: 100, project_picture: "", current: true, done: false, future: false, impact: 30},
-                      {name: "Forage", description: "Fournir de l'eau potable au village", location: "Theni", pictures_goal: 1000, project_picture: "", current: false, done: false, future: true, impact: 700},
-                      {name: "Filtre à eau", description: "Fournir de l'eau potable à l'école", location: "Asharympathy", pictures_goal: 100, project_picture: "", current: false, done: true, future: false, impact: 30},
-                      {name: "Filtre à eau", description: "Fournir de l'eau potable à l'école", location: "Asharympathy", pictures_goal: 100, project_picture: "", current: false, done: true, future: false, impact: 30}
+projects = Project.create!( [ {name: "Filtre à eau", description: "Fournir de l'eau potable à l'école", location: "Asharympathy", pictures_goal: 100, project_picture: "filtre_classe.jpg", current: true, done: false, future: false, impact: 30},
+                      {name: "Forage", description: "Fournir de l'eau potable au village", location: "Theni", pictures_goal: 1000, project_picture: "pompe_eau_femmes.jpg", current: false, done: false, future: true, impact: 700},
+                      {name: "Filtre à eau", description: "Fournir de l'eau potable à l'école", location: "Asharympathy", pictures_goal: 100, project_picture: "puit.jpg", current: false, done: true, future: false, impact: 30},
+                      {name: "Filtre à eau", description: "Fournir de l'eau potable à l'école", location: "Asharympathy", pictures_goal: 100, project_picture: "reservoir.jpg", current: false, done: true, future: false, impact: 30}
                       ] )
 
 
