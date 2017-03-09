@@ -56,7 +56,7 @@ class UserMessenger < BaseMessenger
           type:"template",
           payload:{
             template_type:"button",
-            text: "Merci d'avoir particper ! Prend une photo et partage la sur notre page #washin5",
+            text: "Merci d'avoir particper !",
             buttons:[
               {
                 type:"postback",
@@ -75,7 +75,12 @@ class UserMessenger < BaseMessenger
     )
     message(to: facebook_id,
       message: {
-        text: "Tape ok pour revenir a l'accueil"
+        text: "Prend une photo pour valider ta participation."
+      }
+    )
+    message(to: facebook_id,
+      message: {
+        text: "Merci. Tape ok pour revenir au menu"
       }
     )
 

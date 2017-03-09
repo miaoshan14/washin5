@@ -18,7 +18,7 @@ Bot.on :message do |message|
     participation.project = Project.last
     participation.user = user
     participation.participation_picture_urls =  [ message.attachments.first['payload']['url'] ]
-    partipation.save
+    participation.save
   end
 
   UserMessenger.welcome(facebook_id).deliver_now
