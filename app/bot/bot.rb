@@ -13,6 +13,14 @@ Bot.on :message do |message|
 
   user = User.find_for_messenger(facebook_id)
 
+  if message.attachments
+    participation = Participation.new
+    participation.project = Project.last
+    participation.user = user
+    participation.participation_picture_urls =  [ message.attachments.first['payload']['url'] ]
+    partipation.save
+  end
+
   UserMessenger.welcome(facebook_id).deliver_now
 end
 
