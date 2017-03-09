@@ -4,12 +4,12 @@
   <div class="container">
     <div class="container">
       <h1 class= "text-center catch-phrase" > Envoyez vos selfies pour une bonne cause !</h1>
-      <p class="text-center">Savez-vous que, dans le monde, une personne sur dix n’a pas du tout d’accès à l’eau potable, une personne sur deux n’a pas d’accès sécurisé, et que dans le même temps une douche de 9 min (moyenne nationale française) consomme près de 100 L d’eau potable ? <br >
+      <p class="text-center intro">Savez-vous que, dans le monde, une personne sur dix n’a pas du tout d’accès à l’eau potable, une personne sur deux n’a pas d’accès sécurisé, et que dans le même temps une douche de 9 min (moyenne nationale française) consomme près de 100 L d’eau potable ? <br >
         Avec le Wash in 5 Challenge, vous allez économiser l’eau pour la redistribuer là où elle manque.
       </p>
 
       <!-- Projet en cours -->
-      <h3>Projet en cours</h3>
+      <h3 class="text-center title_projet">Projet en cours</h3>
       <div class="row no-gutter">
         <div class="col-md-5">
           <div class="card" style="background-image: url(<%= image_path 'filtre2.jpg'%>);"> </div>
@@ -62,7 +62,7 @@
     <!-- Projet à venir -->
     <div class="container">
       <div class="row">
-        <h3>Projet à venir</h3>
+        <h3 class="text-center title_projet">Projet à venir</h3>
         <% @projects.first(3).each do |project| %>
         <div class="col-md-4 col-xs-12">
             <!-- insert <div class="card"> -->
