@@ -3,8 +3,43 @@ class UserMessenger < BaseMessenger
   def start_shower(facebook_id)
     message(to: facebook_id,
       message: {
-        text: "tu as 5 minutes pour prendre ta douche"
-      })
+        attachment:{
+          type:"template",
+          payload:{
+            template_type:"button",
+            text: "tu as 5 minutes pour prendre ta douche",
+            buttons:[
+              {
+                type:"postback",
+                title:"Pret ?",
+                payload:"START_CHRONO"
+              }
+            ]
+          }
+        }
+      }
+    )
+  end
+
+  def start_chrono(facebook_id)
+    message(to: facebook_id,
+      message: {
+        attachment:{
+          type:"template",
+          payload:{
+            template_type:"button",
+            text: "tu as 5 minutes pour prendre ta douche",
+            buttons:[
+              {
+                type:"postback",
+                title:"Pret ?",
+                payload:"START_CHRONO"
+              }
+            ]
+          }
+        }
+      }
+    )
   end
 
   def start_project(facebook_id)

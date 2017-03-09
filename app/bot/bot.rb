@@ -29,6 +29,11 @@ Bot.on :postback do |postback|
   if postback.payload == 'START_CHALLENGE'
     UserMessenger.start_shower(facebook_id).deliver_now
   end
+  if postback.payload == 'START_CHRONO'
+    UserMessenger.start_chrono(facebook_id).deliver_now
+  end
+
+
 
   if postback.payload == 'RUNNING_PROJECTS'
     UserMessenger.start_project(facebook_id).deliver_now
