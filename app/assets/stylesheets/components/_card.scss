@@ -1,13 +1,19 @@
 .container {
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
+  color: #4E4E4E;
 }
 
+hr
+{
+  margin-left: 35px;
+  margin-top: 20px;
+}
 
 .card {
   width: 100%;
   height: 380px;
-  margin-top: -10px;
+  margin-top: -20px;
   margin-right: -40px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover;
@@ -37,7 +43,7 @@
       font-size: 12px;
     }
     p {
-      font-size: 10px;
+      font-size: 12px;
     }
 }
 
@@ -55,6 +61,7 @@
 .subtitle-card {
   font-size: 20px !important;
   text-transform: uppercase;
+  color: #5C8EA9;
 }
 
 
@@ -100,11 +107,21 @@
 .catch-phrase {
   color: #175071;
   font-style: italic;
+  margin: 10px 0;
   h2 {
     font-size: 20px;
+    color: #0084FF;
+    text-align: right;
+    margin-top: 22px;
   }
+
 }
 
+.share p
+{
+  font-size: 18px;
+  color: black;
+}
 .share i
 {
   margin-left: 10px;
@@ -114,11 +131,26 @@
 {
   background-color: red;
   height:150px;
-  width: 450px;
+  width: 480px;
   border-radius: 5px;
   border: solid 1px darkred;
-  margin: auto auto;
+  margin: 130px 350px;
   padding: 20px 60px;
+  position: relative;
+}
+
+.follow_us i
+{
+  margin-top: 10px;
+}
+
+.follow_us h4
+{
+  color: #DAEDE2;
+}
+.mosaique
+{
+  position: absolute;
 }
 
 .social
@@ -126,4 +158,31 @@
   border: 1px white solid;
   padding: 10px;
   color: #fff;
+}
+
+.title_projet
+{
+  margin: 20px;
+  height: 50px;
+  margin-top: 25px;
+  color: #5c8ea9;
+
+}
+
+.intro
+{
+  width: 70%;
+  margin-left: 180px;
+}
+
+.image_resize {
+  height: 100px;
+  width: 200px;
+  background-size: contain;
+  display: inline-block;
+}
+
+.projet_end h3
+{
+  margin-left: 7px;
 }

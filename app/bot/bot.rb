@@ -13,6 +13,17 @@ Bot.on :message do |message|
 
   user = User.find_for_messenger(facebook_id)
 
+  if message.attachments && user.allow_to_upload?
+    participation = Participation.new
+    participation.project = Project.last
+    participation.user = user
+    participation.participation_picture_urls =  [ message.attachments.first['payload']['url'] ]
+    participation.save
+
+    user.allow_to_upload = false
+    user.save!
+  end
+
   UserMessenger.welcome(facebook_id).deliver_now
 end
 
@@ -29,6 +40,22 @@ Bot.on :postback do |postback|
   if postback.payload == 'START_CHALLENGE'
     UserMessenger.start_shower(facebook_id).deliver_now
   end
+  if postback.payload == 'START_CHRONO'
+    UserMessenger.start_chrono(facebook_id).deliver_now
+    sleep 5
+    UserMessenger.message_chrono(facebook_id).deliver_now
+    sleep 5
+    UserMessenger.message_chrono_two(facebook_id).deliver_now
+  end
+  if postback.payload == 'UPLOAD'
+    UserMessenger.picture_upload(facebook_id).deliver_now
+    user.allow_to_upload = true
+    user.save!
+    sleep 10
+    UserMessenger.thank_you(facebook_id).deliver_now
+  end
+
+
 
   if postback.payload == 'RUNNING_PROJECTS'
     UserMessenger.start_project(facebook_id).deliver_now
@@ -37,6 +64,7 @@ Bot.on :postback do |postback|
   if postback.payload == 'PROJECTS_COMPLETED'
     UserMessenger.start_completed(facebook_id).deliver_now
   end
+
 end
 
 Bot.on :optin do |optin|

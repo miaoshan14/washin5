@@ -17,6 +17,7 @@ require "attachinary/orm/active_record"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module Washin5
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -25,5 +26,10 @@ module Washin5
 
     config.i18n.available_locales = [:fr, :en]
     config.i18n.default_locale = :fr
+
+    config.action_dispatch.default_headers = {
+     'X-Frame-Options' => 'ALLOWALL'
+    }
+
   end
 end
