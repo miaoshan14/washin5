@@ -35,6 +35,7 @@ gem 'devise'
 gem 'rails-i18n'
 
 gem 'facebook-messenger'
+gem 'letsencrypt_plugin'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
