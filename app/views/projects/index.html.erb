@@ -1,6 +1,5 @@
 <%= render 'shared/banner' %>
 
-
   <div class="container">
     <div class="container">
       <h1 class= "text-center catch-phrase" > Envoyez vos selfies pour une bonne cause !</h1>
@@ -50,7 +49,18 @@
               </div>
 
               <div class="col-md-6 share text-right">
-                <p>Partager <%= image_tag("share.svg", width: '48') %> </p>
+                <div class="share">
+                  <p>Partager</p>
+                  <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank" class="bg-facebook">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                  <a href="https://twitter.com/washin5challeng" target="_blank" class="bg-twitter">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="https://www.instagram.com/washin5challenge" target="_blank" class="bg-instagram">
+                    <i class="fa fa-instagram"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -83,7 +93,8 @@
       </div>
     </div>
     <!-- Projet réalisés -->
-        <h3>Projets réalisés</h3>
+    <hr />
+        <h3 class="title_projet projet_end">Projets réalisés</h3>
           <div class="container">
             <div class="row">
               <div class="col-md-3 col-xs-12">
@@ -148,17 +159,22 @@
           </div>
 
     <!-- Follow us -->
+    <hr>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-
-          <%= image_tag 'mosaique.png' %>
+          <%= image_tag 'mosaique.png', class: 'mosaique'%>
           <div class="follow_us">
             <h4 class="text-center">Rejoignez-Nous</h4>
-
-            <i class="fa fa-facebook social"> Facebook</i>
-            <i class="fa fa-twitter social"> Twitter</i>
-            <i class="fa fa-instagram social "> instagram</i>
+            <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank">
+              <i class="fa fa-facebook social"> Facebook</i>
+            </a>
+            <a href="https://twitter.com/washin5challeng" target="_blank">
+              <i class="fa fa-twitter social"> Twitter</i>
+            </a>
+            <a href="https://www.instagram.com/washin5challenge" target="_blank">
+              <i class="fa fa-instagram social "> instagram</i>
+            </a>
           </div>
         </div>
       </div>
