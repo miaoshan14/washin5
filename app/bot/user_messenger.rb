@@ -49,6 +49,13 @@ class UserMessenger < BaseMessenger
       }
     )
   end
+  def message_chrono_two(facebook_id)
+    message(to: facebook_id,
+      message: {
+        text: "Déjà 10 secondes d'écoulées"
+      }
+    )
+  end
   def picture_upload(facebook_id)
         message(to: facebook_id,
       message: {

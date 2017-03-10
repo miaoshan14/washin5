@@ -44,6 +44,8 @@ Bot.on :postback do |postback|
     UserMessenger.start_chrono(facebook_id).deliver_now
     sleep 5
     UserMessenger.message_chrono(facebook_id).deliver_now
+    sleep 5
+    UserMessenger.message_chrono_two(facebook_id).deliver_now
   end
   if postback.payload == 'UPLOAD'
     UserMessenger.picture_upload(facebook_id).deliver_now
