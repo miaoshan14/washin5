@@ -4,6 +4,11 @@
   color: #4E4E4E;
 }
 
+hr
+{
+  margin-left: 35px;
+  margin-top: 20px;
+}
 
 .card {
   width: 100%;
@@ -126,16 +131,26 @@
 {
   background-color: red;
   height:150px;
-  width: 450px;
+  width: 480px;
   border-radius: 5px;
   border: solid 1px darkred;
-  margin: auto auto;
+  margin: 130px 350px;
   padding: 20px 60px;
+  position: relative;
 }
 
-.follow_us h5
+.follow_us i
 {
+  margin-top: 10px;
+}
 
+.follow_us h4
+{
+  color: #DAEDE2;
+}
+.mosaique
+{
+  position: absolute;
 }
 
 .social
