@@ -23,10 +23,10 @@
       </li>
     </ul>
       <!-- Different navigation if login or not -->
-      <% if user_signed_in? %>
+     <!--  <% if user_signed_in? %>
       <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
+      <!-- <div class="navbar-wagon-item"> -->
+       <!--  <div class="dropdown">
           <%= image_tag "user_connected.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
@@ -41,10 +41,10 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
-      <% else %>
-
+      <!-- <% else %> -->
+<!--
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag "user_disconnected.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -53,13 +53,13 @@
               <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
             <!-- Login text link -->
-            <li>
+           <!--  <li>
               <%= link_to t(".sign_in", default: "S'inscrire"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
           </ul>
-        </div>
-      </div>
-      <% end %>
+        </div> -->
+  <!--     </div> -->
+      <!-- <% end %> -->
   </div>
 
         <!-- Dropdown list appearing on mobile only -->
@@ -73,7 +73,7 @@
           <li role="presentation"><a href="#">Equipe</a></li>
           <li role="presentation"><a href="#">Contact</a></li>
 
-          <% if user_signed_in? %>
+         <!--  <% if user_signed_in? %>
             <li>
               <%= link_to "#" do %>
               <i class="fa fa-user"></i> <%= t(".profile", default: "Profil") %>
@@ -99,7 +99,7 @@
               <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
 
-          <% end %>
+          <% end %> -->
         </ul>
       </div>
     </div>
