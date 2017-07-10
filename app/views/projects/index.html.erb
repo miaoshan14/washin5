@@ -1,5 +1,5 @@
-<%= render 'shared/banner' %>
-
+<div class="main">
+  <%= render 'shared/banner' %>
   <div class="container">
     <div class="container">
       <h1 class= "text-center catch-phrase" > Envoyez vos selfies pour une bonne cause !</h1>
@@ -96,11 +96,11 @@
       </div>
       <% end %>
     </div>
-  </div>
+
     <!-- Projet réalisés -->
-    <hr />
-    <h3 class="title_project title_project">Projets réalisés</h3>
+
     <div class="container">
+      <h3 class="text-center title_project">Projets réalisés</h3>
       <div class="row">
         <div class="project_card col-md-3 col-xs-12">
           <div class="img_card_project_done shadow" alt= "project distribution eau inde card" style="background-image:url(<%= image_path 'robinets.jpg' %>)";>
@@ -184,25 +184,27 @@
     </div>
 
 
+
     <!-- Follow us -->
-    <hr>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <%= image_tag 'mosaique.png', class: 'mosaique'%>
-          <div class="follow_us">
-            <h4 class="text-center">Rejoignez-Nous</h4>
+
+        <div class="mosaique" style="background-image: url(<%= image_path 'mosaique.png' %>);">
+          <div class="follow_us text-center">
+            <h4>Rejoignez-nous</h4>
             <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank">
-              <i class="fa fa-facebook social"> Facebook</i>
+              <i class="fa fa-facebook fa-share-card-white"> </i>
             </a>
             <a href="https://twitter.com/washin5challeng" target="_blank">
-              <i class="fa fa-twitter social"> Twitter</i>
+              <i class="fa fa-twitter fa-share-card-white"> </i>
             </a>
             <a href="https://www.instagram.com/washin5challenge" target="_blank">
-              <i class="fa fa-instagram social "> instagram</i>
+              <i class="fa fa-instagram fa-share-card-white "> </i>
             </a>
+            <div class="">
+              <%= link_to "Photo Live", new_project_participation_path(@current_project), class: "btn btn-photolive"%>
+            </div>
           </div>
         </div>
-      </div>
     </div>
+  </div>
+
 </div>
