@@ -25,7 +25,36 @@
   width: 50px;
 }
 
+/* Navbar share link */
+
+.navbar-share {
+  margin-right : 16px;
+}
+
+.fa-share-navbar {
+  background-color: #7797AB;
+  color: white !important;
+  text-align: center !important;
+  line-height: 32px !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 5px;
+  font-size: 1.2em !important;
+  margin-right: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #234763;
+  }
+ }
+
 /* Navbar right section (with form, links, button) */
+
+.slash {
+  border-right: solid 1px #D8D8D8;
+  padding: 15px 0px 15px 0;
+  margin: 0px 10px;
+}
+
 .navbar-wagon-right {
   display: flex;
   align-items: center;
@@ -66,39 +95,39 @@
   border-color: #ac2626;
 }
 
-/* Navbar search form */
-.navbar-wagon-search {
-  flex: 0 1 300px;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 10px;
-  position: relative;
-}
-.navbar-wagon-search-btn {
-  line-height: 40px;
-  color: #E6E6E6;
-  border: none;
-  background: transparent;
-  position: absolute;
-  right: 14px;
-  top: -2px;
-  z-index: 1;
-}
-.navbar-wagon-search-input {
-  flex: 0 1 300px;
-  transition: all 0.15s ease;
-  line-height: 40px;
-  font-weight: lighter;
-  color: #666666;
-  border: 1px solid #E6E6E6;
-  border-radius: 5px;
-  padding: 0 10px;
-  font-size: 14px;
-  outline: none;
-}
-.navbar-wagon-search-input:focus  {
-  border: 1px solid #CCCCCC;
-}
+// /* Navbar search form */
+// .navbar-wagon-search {
+//   flex: 0 1 300px;
+//   display: flex;
+//   justify-content: flex-end;
+//   padding: 0 10px;
+//   position: relative;
+// }
+// .navbar-wagon-search-btn {
+//   line-height: 40px;
+//   color: #E6E6E6;
+//   border: none;
+//   background: transparent;
+//   position: absolute;
+//   right: 14px;
+//   top: -2px;
+//   z-index: 1;
+// }
+// .navbar-wagon-search-input {
+//   flex: 0 1 300px;
+//   transition: all 0.15s ease;
+//   line-height: 40px;
+//   font-weight: lighter;
+//   color: #666666;
+//   border: 1px solid #E6E6E6;
+//   border-radius: 5px;
+//   padding: 0 10px;
+//   font-size: 14px;
+//   outline: none;
+// }
+// .navbar-wagon-search-input:focus  {
+//   border: 1px solid #CCCCCC;
+// }
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
@@ -150,6 +179,7 @@
   a {
     color: #365F7B;
     font-weight: 200;
+    padding: 10px 10px;
   }
 }
 

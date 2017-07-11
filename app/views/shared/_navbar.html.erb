@@ -4,29 +4,44 @@
   <%= image_tag "logo.png" , size: "50"%>
   <% end %>
 
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <ul class="nav nav-pills">
-      <li role="presentation"><a href="#">Projets</a></li>
-      <li role="presentation"><a href="#">Photos</a></li>
-      <li role="presentation"><a href="#">Presse</a></li>
-      <li role="presentation"><a href="#">Equipe</a></li>
-      <li role="presentation"><a href="#">Contact</a></li>
-      <li class="dropdown">
-        <button role="presentation" class="btn btn-link" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Partenaire
-        <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li class="licolor"><a href="#">Devenir partenaire</a></li>
-          <li ><a href="#">Afficher tout les partenaires</a></li>
-        </ul>
-      </li>
-    </ul>
+  <div class="navbar-wagon-right">
+    <div class="navbar-share">
+      <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank" class="bg-facebook">
+        <i class="fa fa-facebook fa-share-navbar"></i>
+      </a>
+      <a href="https://twitter.com/washin5challeng" target="_blank" class="bg-twitter">
+        <i class="fa fa-twitter fa-share-navbar"></i>
+      </a>
+      <a href="https://www.instagram.com/washin5challenge" target="_blank" class="bg-instagram">
+        <i class="fa fa-instagram fa-share-navbar"></i>
+      </a>
+    </div>
+    <span class="slash hidden-xs hidden-sm"></span>
+
+    <div class="hidden-xs hidden-sm">
+      <ul class="nav nav-pills">
+        <li role="presentation"><a href="#">Projets</a></li>
+        <li role="presentation"><a href="#">Photos</a></li>
+        <li role="presentation"><a href="#">Presse</a></li>
+        <li role="presentation"><a href="#team">Equipe</a></li>
+        <li role="presentation"><a href="#">Contact</a></li>
+        <li class="dropdown">
+          <button role="presentation" class="btn btn-link" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Partenaire
+          <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="licolor"><a href="#">Devenir partenaire</a></li>
+            <li ><a href="#">Afficher tout les partenaires</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
       <!-- Different navigation if login or not -->
-      <% if user_signed_in? %>
+     <!--  <% if user_signed_in? %>
       <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
+      <!-- <div class="navbar-wagon-item"> -->
+       <!--  <div class="dropdown">
           <%= image_tag "user_connected.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
@@ -41,10 +56,10 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
-      <% else %>
-
+      <!-- <% else %> -->
+<!--
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag "user_disconnected.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -53,13 +68,13 @@
               <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
             <!-- Login text link -->
-            <li>
+           <!--  <li>
               <%= link_to t(".sign_in", default: "S'inscrire"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
           </ul>
-        </div>
-      </div>
-      <% end %>
+        </div> -->
+  <!--     </div> -->
+      <!-- <% end %> -->
   </div>
 
         <!-- Dropdown list appearing on mobile only -->
@@ -73,7 +88,7 @@
           <li role="presentation"><a href="#">Equipe</a></li>
           <li role="presentation"><a href="#">Contact</a></li>
 
-          <% if user_signed_in? %>
+         <!--  <% if user_signed_in? %>
             <li>
               <%= link_to "#" do %>
               <i class="fa fa-user"></i> <%= t(".profile", default: "Profil") %>
@@ -99,7 +114,7 @@
               <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
 
-          <% end %>
+          <% end %> -->
         </ul>
       </div>
     </div>

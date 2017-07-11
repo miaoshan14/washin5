@@ -9,11 +9,11 @@
                 <%= cl_image_tag participation.participation_picture.path, width: 300, height: 300, crop: :fill %>
                 <% end %>
             <% end %>
-             <% if current_user == participation.user_id %>
+<!--              <% if current_user == participation.user_id %>
             <%= link_to(raw("<i class='fa fa-pencil-square-o' aria-hidden='true'></i>"), edit_participation_path(participation)) %>
 
             <%= link_to(raw("<i class='fa fa-trash-o' aria-hidden='true'></i>"), participation, method: :delete, data: { confirm: 'Vous êtes sûr ?' }) %>
-          <% end %>
+          <% end %> -->
           </div>
         </div>
       </div>

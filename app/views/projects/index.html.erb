@@ -1,30 +1,30 @@
-<%= render 'shared/banner' %>
-
+<div class="main">
+  <%= render 'shared/banner' %>
   <div class="container">
     <div class="container">
       <h1 class= "text-center catch-phrase" > Envoyez vos selfies pour une bonne cause !</h1>
-      <p class="text-center intro">Savez-vous que, dans le monde, une personne sur dix n’a pas du tout d’accès à l’eau potable, une personne sur deux n’a pas d’accès sécurisé, et que dans le même temps une douche de 9 min (moyenne nationale française) consomme près de 100 L d’eau potable ? <br >
+      <p class="text-center intro">Savez-vous que, dans le monde, une personne sur dix n’a pas du tout d’accès à l’eau potable, alors qu'une douche de 9 min (durée moyenne en France) consomme près de 100 L d’eau potable ? <br >
         Avec le Wash in 5 Challenge, vous allez économiser l’eau pour la redistribuer là où elle manque.
       </p>
 
       <!-- Projet en cours -->
-      <h3 class="text-center title_projet">Projet en cours</h3>
+      <h3 class="text-center title_project">Projet en cours</h3>
       <div class="row no-gutter">
         <div class="col-md-5">
-          <div class="card" style="background-image: url(<%= image_path 'filtre_WI5.jpg'%>);"> </div>
+          <div class="card shadow" style="background-image: url(<%= image_path 'filtre_WI5.jpg'%>);"> </div>
         </div>
 
         <div class="col-md-7">
-          <div class="card-description">
+          <div class="card-description shadow">
             <p class= "subtitle-card text-center">Mission <%= @current_project.name %></p>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-8">
                 <p><%= @current_project.description %> de <%= @current_project.location %>. Installation d'un filtre à eau d'une contenance de 40 litres, transportable et facile à mettre en place.</p>
                 <p class= "subtitle"> L'impact</p>
                 <p>De l'eau potable au quotidien pour <%= @current_project.impact %> personnes</p>
               </div>
 
-              <div class="col-md-6 text-center">
+              <div class="col-md-4 text-center">
                 <p>Financé par : <strong>Ma Rénov</strong></p>
                   <div class="image_resize" style="background-image: url(<%= image_path 'ma_renov_logo.jpg'%>);">
                   </div>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="row">
-              <div class="col-md-12">
+              <div class="goal col-md-12">
                 <p class= "subtitle">Objectif : <%= @current_project.pictures_goal %> photos</p>
                 <div class="progress">
                   <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="<%=@current_project.pictures_goal%>" style="width:<%= @current_project.participations.count %>%;">
@@ -48,17 +48,16 @@
                 <%= link_to "En savoir plus", project_path(@current_project), class: "btn btn-card"%>
               </div>
 
-              <div class="col-md-6 share text-right">
+              <div class="col-md-6 share">
                 <div class="share">
-                  <p>Partager</p>
                   <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank" class="bg-facebook">
-                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-facebook fa-share-card"></i>
                   </a>
                   <a href="https://twitter.com/washin5challeng" target="_blank" class="bg-twitter">
-                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-twitter fa-share-card"></i>
                   </a>
                   <a href="https://www.instagram.com/washin5challenge" target="_blank" class="bg-instagram">
-                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-instagram fa-share-card"></i>
                   </a>
                 </div>
               </div>
@@ -72,111 +71,140 @@
 
     <!-- Projet à venir -->
     <div class="container">
-      <div class="row">
-        <h3 class="text-center title_projet">Projets à venir</h3>
-        <% @projects.first(3).each do |project| %>
-        <div class="col-md-4 col-xs-12">
-            <!-- insert <div class="card"> -->
-            <div class="thumbnail">
-
-              <%= image_tag project.project_picture %>
-              <div class="caption">
-                <h3 class="capitalize"><%= project.name %></h3>
-                  <p>Objectif : <%= project.pictures_goal %> photos</p> <br />
-                    <%= project.description %>
-                  <p>Financé par : <strong>Cleaning bio34</strong></p>
-                  <p>Impact : <%= project.impact %> personnes</p>
+      <h3 class="text-center title_project">Projets à venir</h3>
+      <% @projects.first(3).each do |project| %>
+      <div class="project_card col-md-4 col-xs-12">
+          <!-- insert <div class="card"> -->
+        <div class="img_card_project shadow" alt= "project distribution eau inde card" style="background-image:url(<%= image_path project.project_picture %>)";>
+        </div>
+         <!--  <%= image_tag project.project_picture %> -->
+          <div class= "card_block shadow">
+            <div class="card_title text-center">
+              <h3> <%= project.name %></h3>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 text-center">
+                <p>Objectif : <br /> <%= project.pictures_goal %> photos</p>
+              </div>
+              <div class="col-xs-6 text-center">
+                <p>Financé par : <br /> <strong>CJD Montpellier</strong></p>
               </div>
             </div>
-        </div>
-        <% end %>
+            <%= project.description %>
+            <p>Impact : <%= project.impact %> personnes</p>
+          </div>
       </div>
+      <% end %>
     </div>
+
     <!-- Projet réalisés -->
-    <hr />
-        <h3 class="title_projet projet_end">Projets réalisés</h3>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3 col-xs-12">
-                <div class="thumbnail">
-                  <%= image_tag 'robinets.jpg' %>
-                  <div class="caption">
-                    <h3 class="capitalize"></h3>
-                    <p>Objectif :  200 photos</p> <br />
 
-                    <p>Financé par : <strong>Cjd Montpellier</strong></p>
-                    <p>Impact :  100 personnes</p>
+    <div class="container">
+      <h3 class="text-center title_project">Projets réalisés</h3>
+      <div class="row">
+        <div class="project_card col-md-3 col-xs-12">
+          <div class="img_card_project_done shadow" alt= "project distribution eau inde card" style="background-image:url(<%= image_path 'robinets.jpg' %>)";>
+          </div>
 
-                  </div>
-                </div>
+          <div class= "card_block shadow">
+            <div class="card_title text-center">
+              <h3>Filtre à eau</h3>
+            </div>
+            <div class="row no-gutter">
+              <div class="col-xs-6 text-center">
+                <p>Objectif : <br /> 125 photos</p>
               </div>
-
-              <!--projet 2-->
-              <div class="col-md-3 col-xs-12">
-                <div class="thumbnail">
-                  <%= image_tag 'forage_femmes.jpg' %>
-                  <div class="caption">
-                    <h3 class="capitalize"></h3>
-                    <p>Objectif :  150 photos</p> <br />
-
-                    <p>Financé par : <strong>Cleaning bio34</strong></p>
-                    <p>Impact : 70 personnes</p>
-
-                  </div>
-                </div>
+              <div class="col-xs-6 text-center">
+                <p>Financé par :<br />  <strong>Réaxion</strong></p>
               </div>
-
-              <!--projet 3-->
-              <div class="col-md-3 col-xs-12">
-                <div class="thumbnail">
-                  <%= image_tag 'pompe_eau_femmes.jpg' %>
-                  <div class="caption">
-                    <h3 class="capitalize"></h3>
-                    <p>Objectif : 2000 photos</p> <br />
-
-                    <p>Financé par : <strong>Drole de pain</strong></p>
-                    <p>Impact : 200 personnes</p>
-
-                  </div>
-                </div>
-              </div>
-
-              <!--Projet 4-->
-              <div class="col-md-3 col-xs-12">
-                <div class="thumbnail">
-                  <%= image_tag 'reservoir.jpg' %>
-                  <div class="caption">
-                    <h3 class="capitalize"></h3>
-                    <p>Objectif : 100 photos</p> <br />
-
-                    <p>Financé par : <strong>Wanted Web</strong></p>
-                    <p>Impact : 80 personnes</p>
-
-                  </div>
-                </div>
-              </div>
+              <p>Impact :  30 personnes</p>
             </div>
           </div>
+        </div>
+        <!--projet 2-->
+        <div class="project_card col-md-3 col-xs-12">
+          <div class="img_card_project_done shadow" alt= "project distribution eau inde card" style="background-image:url(<%= image_path 'forage_femmes.jpg' %>)";>
+          </div>
+          <div class= "card_block shadow">
+            <div class="card_title text-center">
+              <h3>Filtre à eau</h3>
+            </div>
+            <div class="row no-gutter">
+              <div class="col-xs-6 text-center">
+                <p>Objectif : <br /> 125 photos</p>
+              </div>
+              <div class="col-xs-6 text-center">
+                <p>Financé par : <br /><strong>Cabinet d'avocats Frances Dehors</strong></p>
+              </div>
+              <p>Impact :  30 personnes</p>
+            </div>
+          </div>
+        </div>
+
+        <!--projet 3-->
+        <div class="project_card col-md-3 col-xs-12">
+          <div class="img_card_project_done shadow" alt= "project distribution eau inde card" style="background-image:url(<%= image_path 'pompe_eau_femmes.jpg' %>)";>
+          </div>
+          <div class= "card_block shadow">
+            <div class="card_title text-center">
+              <h3>Filtre à eau</h3>
+            </div>
+            <div class="row no-gutter">
+              <div class="col-xs-6 text-center">
+                <p>Objectif : <br /> 125 photos</p>
+              </div>
+              <div class="col-xs-6 text-center">
+                <p>Financé par :<br />  <strong>CJD France</strong></p>
+              </div>
+              <p>Impact :  30 personnes</p>
+            </div>
+          </div>
+        </div>
+
+        <!--Projet 4-->
+        <div class="project_card col-md-3 col-xs-12">
+          <div class="img_card_project_done shadow" alt= "project distribution eau inde card" style="background-image:url(<%= image_path 'reservoir.jpg' %>)";>
+          </div>
+          <div class= "card_block shadow">
+            <div class="card_title text-center">
+              <h3>Filtre à eau</h3>
+            </div>
+            <div class="row no-gutter">
+              <div class="col-xs-6 text-center">
+                <p>Objectif : <br /> 125 photos</p>
+              </div>
+              <div class="col-xs-6 text-center">
+                <p>Financé par :<br />  <strong>Ma Rénov'</strong></p>
+              </div>
+              <p>Impact :  30 personnes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
     <!-- Follow us -->
-    <hr>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <%= image_tag 'mosaique.png', class: 'mosaique'%>
-          <div class="follow_us">
-            <h4 class="text-center">Rejoignez-Nous</h4>
+
+        <div class="mosaique" style="background-image: url(<%= image_path 'mosaique.png' %>);">
+          <div class="follow_us text-center">
+            <h4>Rejoignez-nous</h4>
             <a href="https://www.facebook.com/washin5challenge/?fref=ts" target="_blank">
-              <i class="fa fa-facebook social"> Facebook</i>
+              <i class="fa fa-facebook fa-share-card-white"> </i>
             </a>
             <a href="https://twitter.com/washin5challeng" target="_blank">
-              <i class="fa fa-twitter social"> Twitter</i>
+              <i class="fa fa-twitter fa-share-card-white"> </i>
             </a>
             <a href="https://www.instagram.com/washin5challenge" target="_blank">
-              <i class="fa fa-instagram social "> instagram</i>
+              <i class="fa fa-instagram fa-share-card-white "> </i>
             </a>
+            <div class="">
+              <%= link_to "Photo Live", new_project_participation_path(@current_project), class: "btn btn-photolive"%>
+            </div>
           </div>
         </div>
-      </div>
     </div>
+  </div>
+
 </div>
