@@ -10,7 +10,7 @@ class ParticipationsController < ApplicationController
     @project = Project.find(params[:project_id])
     @participation = Participation.new(participation_params)
     @participation.project = @project
-    @participation.user = current_user
+    # @participation.user = current_user
 
     if @participation.save
       redirect_to project_path(@project)
