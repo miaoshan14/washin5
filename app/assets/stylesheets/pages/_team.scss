@@ -1,0 +1,72 @@
+.team {
+  .container {
+    margin-bottom: 50px;
+  }
+  h1 {
+    margin: 40px 0;
+    color: #5c8ea9;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+  }
+
+  .idea {
+    text-align: center;
+    color: #175071;
+    strong {
+      font-size: 20px;
+      margin: 0 90px;
+    }
+  }
+  .bordered {
+    border: solid 1px #175071;
+    padding: 40px;
+  }
+
+  .grey {
+    .container {
+      margin-bottom: 0px;
+    }
+    background-color: #EBEBEB;
+    background-size: cover;
+    p {
+    margin-bottom: 50px;
+    text-align: justify;
+    }
+  }
+  .image_page_team {
+    height: 190px;
+    margin-top: 35px;
+  }
+  .video_page_team {
+    height: 190px;
+    margin-top: 55px;
+  }
+
+  .team_profiles {
+    .img-quadrata {
+       border-radius:50%;
+       width:150px;
+       height:150px;
+       margin-top:20px;
+    }
+    h3 {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+  }
+  .share {
+    text-align: center;
+    padding: 0px;
+  }
+  .fa-share-card {
+    background-color: #7797AB;
+    color: white !important;
+    text-align: center !important;
+    line-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 5px;
+    font-size: 0.8em !important;
+  }
+}
