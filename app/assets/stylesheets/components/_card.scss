@@ -17,7 +17,7 @@ hr
 .card {
   width: 100%;
   height: 380px;
-  margin-top: -5px;
+  margin-top: -9px;
   margin-right: -40px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover;
@@ -221,7 +221,7 @@ hr
   height: 50px;
   margin-top: 40px;
   color: #5c8ea9;
-
+  font-size: 1.5em !important;
 }
 
 .intro
@@ -241,11 +241,14 @@ hr
 
 
 .project_card {
+  p{
+    font-size: 15px;
+  }
   .img_card_project  {
   background-size: cover;
   background-position: center center;
   width: 360px;
-  height: 240px;
+  height: 280px;
   border-radius: 4px;
   margin-left: -4px;
   }
