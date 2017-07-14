@@ -1,14 +1,90 @@
 <%= render 'shared/banner' %>
-<div class="container">
-  <h1>L'idée</h1>
-  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dignissimos vel et eveniet aliquid, nulla, labore repudiandae ullam est quasi distinctio amet veniam accusamus error dolorum vero cupiditate inventore quibusdam ut. Amet, earum. Voluptas, quos, fugit. Eos assumenda, deserunt optio repellat incidunt suscipit. Magni, quam quidem odit. Dolore neque sit explicabo ex odio id quaerat repudiandae quos molestias quasi perferendis placeat accusantium eaque amet ullam fugiat, vel vitae ad voluptas consequuntur aut a perspiciatis alias. Sint error veritatis atque, maiores architecto ex consequatur recusandae impedit modi nam molestiae tenetur asperiores, animi tempore porro aperiam, dolor quas sit quia a sed!</p>
-</div>
-<div class="container grey">
-  <h1>D'abord économiser...</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita voluptas in, eaque? Nisi eos consequatur quisquam doloremque consectetur, quibusdam nemo. Facilis, illo, sint. Eligendi ab nisi eos praesentium dolor nostrum sint sed accusamus harum atque magni odio nobis sequi, quasi consequuntur. Necessitatibus qui minima illum, aut. Ex quaerat quis quos.</p>
-  <h1>... puis redistribuer</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus facilis, officia ad, quod cum deleniti esse repudiandae impedit consequatur alias sequi voluptatibus odit nisi placeat, eum beatae totam. Esse, similique voluptatem blanditiis nam provident nisi voluptatum, harum velit magnam maxime iure dicta. Nulla quo porro molestiae, sed facere laudantium dolore.</p>
-</div>
-<div class="container">
-  <h1>L'histoire</h1>
+<div class="team">
+  <div class="container">
+    <h1>L'idée</h1>
+    <p class="idea"><strong>L’idée de départ est la suivante : la durée moyenne d’une douche en France est de 9mn, représentant une consommation d’eau de 100L. En prenant une douche de seulement 5mn, on économise donc 40 Litres d’eau ! Tout part de là.</strong></p>
+  </div>
+
+  <div class="grey">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <h1>D'abord économiser...</h1>
+          <p>Le concept du #washin5challenge (« wash in five challenge ») est donc d’inciter les internautes à prendre une douche de 5mn, à prendre un selfie en sortant de leur douche pour le prouver et à nous l’envoyer sur notre page facebook.
+          Chaque photo représente une économie de 40 litres qui est ajoutée à un compteur d’économies d’eau.</p>
+        </div>
+        <div class="col-sm-4 text-center">
+          <%= image_tag 'washeur.jpg', class: "image_page_team" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 text-center">
+          <video autoplay="autoplay" loop="loop" muted="muted" class="video_page_team">
+          <source src="videos/redistribuer.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="col-sm-8"><h1>... puis redistribuer</h1>
+          <p>C’est là que le concept devient intéressant, car à chaque fois que le compteur atteint une économie de 5000 litres, soit 125 photos reçues, une entreprise partenaire (dont le logo est affiché sur notre page en contrepartie), finance une action pour fournir de l’eau là où elle manque. Par exemple en ce moment, un filtre à eau est financé par <= @current_project.partner %> et sera installé dans une école en Inde par l’association Kynarou.
+          Le but est de transformer une action virtuelle simple et amusante (un selfie) en une action réelle et concrète sur le terrain ! </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>L'histoire</h1>
+    <p class="idea bordered">Le challenge est né dans la tête de Thomas DAVID qui travaille depuis 15 ans sur les questions d’accès à l’eau potable pour tous, notamment au sein de l’association Kynarou qui apporte un accès à l’eau en Inde depuis plus de 10 ans. Après avoir vécu dans des villages sans eau, en Inde, en Indonésie ou au Ghana, il a eu envie de passer à l’action en faisant d’une pierre deux coups : faire prendre conscience de la valeur réelle de l’eau en France, et financer des actions là où l’eau manque, en évitant les circuits classiques de culpabilisation ou d’appel au don. </br>
+    Il en a parlé autour de lui, et c’est finalement grâce à une équipe de 5 personnes (Xavier, Sophie, Raphael, Cécile et Thomas) que l’idée est devenue réalité en Mai 2016 avec le projet #washin5challenge !!</p>
+  </div>
+
+  <div class="grey">
+    <div class="container team_profiles">
+      <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">L'équipe de Wash In 5</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-1">
+            <img src="https://ununsplash.imgix.net/photo-1417024321782-1375735f8987?q=75&fm=jpg&s=7af3f809a9c1b90b7fcbd71655b661bc"
+            class="img-quadrata center-block" >
+            <h3 class="text-center">Raphaël</h3>
+        </div>
+        <div class="col-md-2">
+            <img src="https://unsplash.imgix.net/reserve/fqUehZ3ZRru2Kh11qDBT_IMG_0042.jpg?q=75&fm=jpg&s=e96c5bfe57acbd6cdfdbe7d84f37656d"
+            class="center-block img-quadrata" >
+            <h3 class="text-center" >Sophie</h3>
+        </div>
+        <div class="col-md-2">
+            <img src="https://unsplash.imgix.net/photo-1422222948315-28aadb7a2cb8?q=75&fm=jpg&s=cfeadbd7a991e58b553bee29a7eeca55"
+            class="center-block img-quadrata">
+            <h3 class="text-center">Thomas</h3>
+        </div>
+        <div class="col-md-2">
+            <img src="https://unsplash.imgix.net/photo-1422222948315-28aadb7a2cb8?q=75&fm=jpg&s=cfeadbd7a991e58b553bee29a7eeca55"
+            class="center-block img-quadrata">
+            <h3 class="text-center">Xavier</h3>
+        </div>
+        <div class="col-md-2">
+            <%= image_tag "cecile.jpg", class: "center-block img-quadrata" %>
+            <h3 class="text-center">Cécile</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Retrouvez-nous sur les réseaux sociaux</h1>
+    <div class="share">
+      <a href="http://www.facebook.com/washin5challenge/" target="_blank" class="bg-facebook">
+        <i class="fa fa-facebook fa-share-card"></i>
+      </a>
+      <a href="https://twitter.com/washin5challeng" target="_blank" class="bg-twitter">
+        <i class="fa fa-twitter fa-share-card"></i>
+      </a>
+      <a href="https://www.instagram.com/washin5challenge" target="_blank" class="bg-instagram">
+        <i class="fa fa-instagram fa-share-card"></i>
+      </a>
+    </div>
+  </div>
 </div>
