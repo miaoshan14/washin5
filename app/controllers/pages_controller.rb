@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def press
+  end
+
   def htpps
   end
 end

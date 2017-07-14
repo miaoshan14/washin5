@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'team', to: 'pages#team'
   get 'contact', to: 'pages#contact'
+  get 'press', to:'pages#press'
 
   get "https" => "pages#https"
 
