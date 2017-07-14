@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   def team
   end
 
+  def contact
+  end
+
   def htpps
   end
 end

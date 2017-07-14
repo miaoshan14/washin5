@@ -24,11 +24,11 @@
   }
 
   .grey {
-    background-color: #EBEBEB;
-    background-size: cover;
     .container {
       margin-bottom: 0px;
     }
+    background-color: #EBEBEB;
+    background-size: cover;
     p {
     margin-bottom: 50px;
     text-align: justify;
@@ -67,6 +67,6 @@
     width: 40px !important;
     height: 40px !important;
     border-radius: 5px;
-    font-size: 0.8em !important;
+    font-size: 1em !important;
   }
 }

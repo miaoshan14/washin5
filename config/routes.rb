@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: "projects#index"
 
   get 'team', to: 'pages#team'
+  get 'contact', to: 'pages#contact'
 
   get "https" => "pages#https"
 
