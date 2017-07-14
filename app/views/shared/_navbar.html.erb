@@ -23,7 +23,7 @@
         <li role="presentation"><a href="#">Projets</a></li>
         <li role="presentation"><a href="#">Photos</a></li>
         <li role="presentation"><a href="#">Presse</a></li>
-        <li role="presentation"><a href="#team">Equipe</a></li>
+        <li role="presentation"><%= link_to "Equipe", team_path %></li>
         <li role="presentation"><a href="#">Contact</a></li>
         <li class="dropdown">
           <button role="presentation" class="btn btn-link" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -37,6 +37,7 @@
         </li>
       </ul>
     </div>
+
       <!-- Different navigation if login or not -->
      <!--  <% if user_signed_in? %>
       <!-- Profile picture and dropdown -->
