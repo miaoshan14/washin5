@@ -1,4 +1,53 @@
 <footer>
+<div class="container">
+    <div class="row">
+    <div class="col-md-12">
+                <div id="Carousel" class="carousel slide">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#Carousel" data-slide-to="1"></li>
+                    <li data-target="#Carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+
+                <div class="item active">
+                  <div class="row">
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                  </div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                  </div><!--.row-->
+                </div><!--.item-->
+
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                    <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                  </div><!--.row-->
+                </div><!--.item-->
+
+                </div><!--.carousel-inner-->
+                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+                </div><!--.Carousel-->
+
+    </div>
+  </div>
+</div><!--.container-->
   <div class="img-part">
     <ul class="img-list">
 
@@ -25,26 +74,26 @@
       <div class="row">
         <div class="mentions-footer">
           <div class="col-xs-6 col-sm-4">
-            <ul class="links-list">
-              <li>Projets</li>
-              <li>Photos</li>
-              <li>Presse</li>
+            <ul>
+              <li class="link-list">Projets</li>
+              <li class="link-list">Photos</li>
+              <li class="link-list"><%= link_to "Presse", press_path %></li>
             </ul>
          </div>
 
           <div class="col-xs-6 col-sm-4">
-            <ul class="links-list">
-              <li>Partenaires</li>
-              <li>Equipe</li>
-              <li>Contact</li>
+            <ul>
+              <li class="link-list"><%= link_to "Partenaires", contact_path %></li>
+              <li class="link-list"><%= link_to "Equipe", team_path %></li>
+              <li class="link-list"><%= link_to "Contact", contact_path %></li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-sm-4">
-            <ul class="links-list">
-              <li>Mentions légales</li>
-              <li>Politique de confidentialité</li>
-              <li>Conditions d'utilisation</li>
+            <ul >
+              <li class="link-list">Mentions légales</li>
+              <li class="link-list"> Politique de confidentialité</li>
+              <li class="link-list">Conditions d'utilisation</li>
             </ul>
           </div>
         </div>
