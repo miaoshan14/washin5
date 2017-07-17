@@ -2,6 +2,9 @@
   <%= render 'shared/banner' %>
   <div class="container">
     <div class="container">
+    <div class="text-center">
+    <%= link_to "Poster une photo", new_project_participation_path(@current_project), class: "btn btn-photolive-top"%>
+    </div>
       <h1 class= "text-center catch-phrase" > Envoyez vos selfies pour une bonne cause !</h1>
       <p class="text-center intro">Savez-vous que, dans le monde, une personne sur dix n’a pas du tout d’accès à l’eau potable, alors qu'une douche de 9 min (durée moyenne en France) consomme près de 100 L d’eau potable ? <br >
         Avec le Wash in 5 Challenge, vous allez économiser l’eau pour la redistribuer là où elle manque.
@@ -45,7 +48,7 @@
 
             <div class="row">
               <div class="col-md-6">
-                <%= link_to "En savoir plus", project_path(@current_project), class: "btn btn-card"%>
+                <%= link_to "Je soutiens ce projet", project_path(@current_project), class: "btn btn-card"%>
               </div>
 
               <div class="col-md-6 share">

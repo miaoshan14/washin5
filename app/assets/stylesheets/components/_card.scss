@@ -5,6 +5,20 @@
   position: relative;
 }
 
+.btn-photolive-top {
+  color: white;
+  border-radius: 20px !important;
+  font-size: 16px;
+  font-weight: 300 !important;
+  border: 2px white solid !important;
+  margin: 15px;
+  background-color: #E60000;
+  &:hover {
+    background-color: rgba(228, 0, 0, 0.5) !important;
+    color: white !important;
+  }
+}
+
 hr
 {
   margin-left: 35px;
