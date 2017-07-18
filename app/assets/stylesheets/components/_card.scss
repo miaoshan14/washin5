@@ -5,20 +5,6 @@
   position: relative;
 }
 
-.btn-photolive-top {
-  color: white;
-  border-radius: 20px !important;
-  font-size: 16px;
-  font-weight: 300 !important;
-  border: 2px white solid !important;
-  margin: 15px;
-  background-color: #E60000;
-  &:hover {
-    background-color: rgba(228, 0, 0, 0.5) !important;
-    color: white !important;
-  }
-}
-
 hr
 {
   margin-left: 35px;
@@ -245,8 +231,20 @@ hr
 
 .intro
 {
+  text-align: center;
+  p {
   width: 70%;
   margin: auto;
+  transition:height .5s;
+  max-height:0;
+  overflow:hidden;
+  -webkit-transition: max-height 1.5s;
+  -moz-transition: max-height 1.5s;
+  transition: max-height 1.5s;
+  }
+  &:hover p {
+    max-height: 100px;
+  }
 }
 
 .image_resize {

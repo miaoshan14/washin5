@@ -38,25 +38,40 @@
       letter-spacing: 6px;
     }
   }
-
+  &-btn-photolive{
+    color: white;
+    border-radius: 20px !important;
+    font-size: 16px;
+    font-weight: 300 !important;
+    border: 2px white solid !important;
+    margin-top: 15px;
+    background-color: #E60000;
+    text-transform: uppercase;
+    &:hover {
+      background-color: rgba(228, 0, 0, 0.5) !important;
+      color: white !important;
+      .fa {
+          -webkit-transform: scale(1.4);
+          -moz-transform: scale(1.4);
+          -o-transform: scale(1.4);
+      }
+    }
+    a {
+      color: white;
+      &:hover {
+        color: white !important;
+      }
+    }
+    .fa {
+      vertical-align: middle;
+    }
+  }
 
 
 }
 
-// .banner_photolive {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   position: absolute;
-//   top: 235px;
-//   right: 10px;
-//   font-style: italic;
 
-//   a{
-//     color: white;
-//     font-size: 16px;
-//   }
-// }
+
 // .share-link {
 //   flex: 0 0 24%;
 //   color: #7797AB;
