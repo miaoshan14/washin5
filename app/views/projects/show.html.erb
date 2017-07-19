@@ -58,7 +58,7 @@
       <div class="col-md-5 picture-grid">
         <div class="row">
           <% if @project.participations.size > 0 %>
-            <h3 class='text-center'> Déjà <%= @project.users.count %> washeur<%= @project.users.count > 1 ? "s" : "" %> sur ce projet </h3>
+            <h3 class='text-center'> Déjà <%= @project.participations.count %> washeur<%= @project.participations.count > 1 ? "s" : "" %> sur ce projet </h3>
             <% @project.last_participations.each do |participation| %>
               <% if participation.picture != nil %>
               <div class="col-xs-6 col-sm-3 mini_picture">
